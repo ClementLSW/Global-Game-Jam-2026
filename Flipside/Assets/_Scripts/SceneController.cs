@@ -44,6 +44,25 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(currentScene.buildIndex);
     }
 
+    // example function call:
+    // SceneController.Instance.LoadSceneByName("Level2");
+    public void LoadGameScene()
+    {
+        LoadSceneByName("Game");
+    }
+    public void LoadMenuScene()
+    {
+        LoadSceneByName("Mainmenu");
+    }
+
+    public void LoadSceneByName(string sceneName)
+    {
+        if (isPaused)
+            TogglePause();
+
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void TogglePause()
     {
         isPaused = !isPaused;
