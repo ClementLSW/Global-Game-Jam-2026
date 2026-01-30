@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -38,6 +38,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 3436235897
+    locked: 0
+  - name: Walls
+    uniqueID: 2172862253
+    locked: 0
+  - name: Obstacles
+    uniqueID: 2631834065
+    locked: 0
+  - name: Diagetic UI
+    uniqueID: 630715383
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  m_RenderingLayers:
+  - Default
