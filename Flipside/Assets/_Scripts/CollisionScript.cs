@@ -7,7 +7,6 @@ public class CollisionScript : MonoBehaviour
     public MaskController maskController;
     public int damageAmount;
     public bool isCritBumper = false; // mask takes more damage when hit
-    public bool isSwapBumper = false; // swap mask when hit
 
     public GameObject damageTextCanvas;
 
@@ -29,23 +28,26 @@ public class CollisionScript : MonoBehaviour
             Vector2 hitPoint = contact.point;
             Vector2 hitNormal = contact.normal;
 
-            maskController.TakeDamage(damageAmount, isCritBumper, isSwapBumper);
+            maskController.TakeBumperDamage(damageAmount, isCritBumper);
+
+            Camera.main.GetComponent<CameraController>().Shake(0.05f, 0.05f);
 
             Vector3 hitPos = collision.contacts[0].point; // this is where damage text spawns as an object
             GameObject instDamageNumber = Instantiate(damageTextCanvas, (Vector2)hitPos - hitNormal, Quaternion.identity); // instantiation
-            instDamageNumber.GetComponentInChildren<TextMeshProUGUI>().text = damageAmount.ToString();
+
+            if (isCritBumper == true)
+            {
+                instDamageNumber.GetComponentInChildren<TextMeshProUGUI>().text = (damageAmount*5).ToString();
+            }
+            else
+            {
+                instDamageNumber.GetComponentInChildren<TextMeshProUGUI>().text = damageAmount.ToString();
+            }
 
 
             if (isCritBumper == true)
             {
                 ResetCritBumper();
-            }
-
-            if (isSwapBumper == true)
-            {
-                ResetSwapBumper();
-                MaskController.Instance.SwapMasks();
-                bumperController.AssignNewSwapBumper(); // mask swapping also called in takedamage function lol
             }
 
             hit.GetComponent<Ball>().ReflectBall(hitNormal, hitPoint);
@@ -60,26 +62,10 @@ public class CollisionScript : MonoBehaviour
         // do crit bumper visuals here
     }
 
-    public void SetAsSwapBumper()
-    {
-        isSwapBumper = true;
-        GetComponent<SpriteRenderer>().color = Color.cyan;
-        Debug.Log("Swap bumper set!");
-        // do crit bumper visuals here
-    }
-
     public void ResetCritBumper()
     {
         isCritBumper = false;
         GetComponent<SpriteRenderer>().color = Color.white;
         Debug.Log("Crit bumper reset!");
-    }
-
-    public void ResetSwapBumper()
-    {
-        isSwapBumper = false;
-        GetComponent<SpriteRenderer>().color = Color.white;
-        BumperController.Instance.swapBumperAssigned = false;
-        Debug.Log("Swap bumper reset!");
     }
 }

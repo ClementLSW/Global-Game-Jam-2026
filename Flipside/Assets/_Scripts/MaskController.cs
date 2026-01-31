@@ -1,5 +1,8 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public enum MaskType
 {
@@ -31,6 +34,7 @@ public class MaskController : MonoBehaviour
     public Transform centerSlot;
     public Transform inactiveSlotA;
     public Transform inactiveSlotB;
+    public Vector2 centerSlotPosition;
 
     [Header("Stats")]
     public int startingHealth = 10000;
@@ -48,6 +52,15 @@ public class MaskController : MonoBehaviour
 
     public MaskType CurrentMask => currentMask;
     public bool AllMasksDead => happyDead && sadDead && angryDead;
+
+    [Header("Mask Damaging")]
+    public Image ringFill;
+    public int maskHitsTotal = 20;
+    public int maskHitsLeft;
+    public GameObject damageTextCanvas;
+    private bool isImmune = false;
+    public float immuneDuration = 1.5f;
+
 
     public float GetHealthPercent(MaskType type)
     {
@@ -81,37 +94,91 @@ public class MaskController : MonoBehaviour
         currentMask = (MaskType)Random.Range(0, 3);
 
         PositionMasks();
-        UpdateActiveMask();
+
+        ResetHitsLeft();
     }
 
-    public void TakeDamage(int damageAmount, bool isCritBumper = false, bool isSwapBumper = false)
+    public void TakeBumperDamage(int damageAmount, bool isCritBumper = false, bool isSwapBumper = false)
     {
-        if (AllMasksDead) return;
-
-        if (isCritBumper)
+        if (isImmune == false)
         {
-            damageAmount = Mathf.RoundToInt(damageAmount * critMult);
-        }
+            if (AllMasksDead) return;
 
-        switch (currentMask)
+            if (isCritBumper)
+            {
+                damageAmount = Mathf.RoundToInt(damageAmount * critMult);
+            }
+
+            switch (currentMask)
+            {
+                case MaskType.Happy:
+                    ApplyDamage(ref happyHealth, ref happyDead, damageAmount, currentMask);
+                    break;
+
+                case MaskType.Sad:
+                    ApplyDamage(ref sadHealth, ref sadDead, damageAmount, currentMask);
+                    break;
+
+                case MaskType.Angry:
+                    ApplyDamage(ref angryHealth, ref angryDead, damageAmount, currentMask);
+                    break;
+            }
+        }
+    }
+
+    public void TakeDirectDamage(int baseDamage)
+    {
+        if (isImmune || AllMasksDead) return;
+
+        if (maskHitsLeft > 0)
         {
-            case MaskType.Happy:
-                ApplyDamage(ref happyHealth, ref happyDead, damageAmount, currentMask);
-                break;
+            int hitNumber = maskHitsTotal - maskHitsLeft + 1;
+            int damageAmount = baseDamage * hitNumber;
 
-            case MaskType.Sad:
-                ApplyDamage(ref sadHealth, ref sadDead, damageAmount, currentMask);
-                break;
+            Vector2 centerPos = centerSlot.position;
+            GameObject instDamageNumber = Instantiate(
+                damageTextCanvas,
+                centerPos,
+                Quaternion.identity
+            );
 
-            case MaskType.Angry:
-                ApplyDamage(ref angryHealth, ref angryDead, damageAmount, currentMask);
-                break;
+            instDamageNumber
+                .GetComponentInChildren<TextMeshProUGUI>()
+                .text = damageAmount.ToString();
+
+            switch (currentMask)
+            {
+                case MaskType.Happy:
+                    ApplyDamage(ref happyHealth, ref happyDead, damageAmount, currentMask);
+                    break;
+                case MaskType.Sad:
+                    ApplyDamage(ref sadHealth, ref sadDead, damageAmount, currentMask);
+                    break;
+                case MaskType.Angry:
+                    ApplyDamage(ref angryHealth, ref angryDead, damageAmount, currentMask);
+                    break;
+            }
+
+            DecrementHits();
+
+            if (maskHitsLeft == 0)
+            {
+                StartCoroutine(ImmunityCoroutine());
+                SwapMasks();
+            }
         }
+    }
 
-        //if (isSwapBumper)
-        //{
-        //    SwapMasks();
-        //}
+    public IEnumerator ImmunityCoroutine()
+    {
+        isImmune = true;
+        ringFill.enabled = false;
+
+        yield return new WaitForSeconds(immuneDuration);
+
+        isImmune = false;
+        ringFill.enabled = true;
+        UpdateSlider();
     }
 
     void ApplyDamage(ref int health, ref bool dead, int damageAmount, MaskType type)
@@ -132,6 +199,8 @@ public class MaskController : MonoBehaviour
 
     public void SwapMasks()
     {
+        Camera.main.GetComponent<CameraController>().Shake(0.3f, 1f);
+
         if (AllMasksDead)
         {
             //WinGame();
@@ -146,7 +215,8 @@ public class MaskController : MonoBehaviour
 
         currentMask = nextMask;
         PositionMasks();
-        UpdateActiveMask();
+        ResetHitsLeft();
+
         onMaskSwapped?.Invoke(currentMask);
     }
 
@@ -208,24 +278,23 @@ public class MaskController : MonoBehaviour
         };
     }
 
-    void UpdateActiveMask()
+    public void DecrementHits(int amount = 1)
     {
-        Collider2D happyCol = happyMask.GetComponent<Collider2D>();
-        Collider2D sadCol = sadMask.GetComponent<Collider2D>();
-        Collider2D angryCol = angryMask.GetComponent<Collider2D>();
-        SetCollider(happyMask, currentMask == MaskType.Happy);
-        SetCollider(sadMask, currentMask == MaskType.Sad);
-        SetCollider(angryMask, currentMask == MaskType.Angry);
+        maskHitsLeft -= amount;
+        maskHitsLeft = Mathf.Clamp(maskHitsLeft, 0, maskHitsTotal);
 
-        //happyMask.SetActive(currentMask == MaskType.Happy);
-        //sadMask.SetActive(currentMask == MaskType.Sad);
-        //angryMask.SetActive(currentMask == MaskType.Angry);
+        UpdateSlider();
     }
 
-    void SetCollider(GameObject obj, bool enabled)
+    public void ResetHitsLeft()
     {
-        Collider col = obj.GetComponent<Collider>();
-        if (col != null)
-            col.enabled = enabled;
+        maskHitsLeft = maskHitsTotal;
+        UpdateSlider();
+        ringFill.enabled = false;
+    }
+
+    void UpdateSlider()
+    {
+        ringFill.fillAmount = (float)maskHitsLeft / maskHitsTotal;
     }
 }
