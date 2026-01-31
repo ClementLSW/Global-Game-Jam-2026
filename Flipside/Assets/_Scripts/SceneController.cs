@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
     public static SceneController Instance;
+
+    public InputActionReference restart;
+    public InputActionReference pause;
+    public InputActionReference start;
 
     private bool isPaused = false;
 
@@ -20,18 +25,59 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RestartScene();
-        }
+        restart.action.performed += OnRestartPerformed;
+        restart.action.Enable();
 
-        if (Input.GetKeyDown(KeyCode.P))
+        pause.action.performed += OnPausePerformed;
+        pause.action.Enable();
+
+        start.action.performed += OnStartPerformed;
+        start.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        restart.action.performed -= OnRestartPerformed;
+        restart.action.Disable();
+
+        pause.action.performed -= OnPausePerformed;
+        pause.action.Disable();
+
+        start.action.performed -= OnStartPerformed;
+        start.action.Disable();
+    }
+
+    private void OnRestartPerformed(InputAction.CallbackContext context)
+    {
+        RestartScene();
+    }
+    private void OnPausePerformed(InputAction.CallbackContext context)
+    {
+        TogglePause();
+    }
+
+    private void OnStartPerformed(InputAction.CallbackContext context)
+    {
+        if (SceneManager.GetActiveScene().name == "Mainmenu")
         {
-            TogglePause();
+            LoadGameScene();
         }
     }
+
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.R))
+    //    {
+    //        RestartScene();
+    //    }
+
+    //    if (Input.GetKeyDown(KeyCode.P))
+    //    {
+    //        TogglePause();
+    //    }
+    //}
 
     public void RestartScene()
     {
