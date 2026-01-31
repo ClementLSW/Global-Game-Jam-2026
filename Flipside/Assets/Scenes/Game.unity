@@ -10749,6 +10749,8 @@ MonoBehaviour:
   newMaskHealth: 400
   newMask: {fileID: 233167151}
   oldMask: {fileID: 915824643}
+  angerMask: {fileID: 631063737}
+  sadnessMask: {fileID: 2055474966}
 --- !u!4 &1752441273
 Transform:
   m_ObjectHideFlags: 0

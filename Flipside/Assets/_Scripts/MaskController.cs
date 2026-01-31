@@ -97,7 +97,7 @@ public class MaskController : MonoBehaviour
 
         currentMask = (MaskType)Random.Range(0, 3);
 
-        PositionMasks();
+        //PositionMasks();
 
         ResetHitsLeft();
     }
@@ -263,16 +263,22 @@ public class MaskController : MonoBehaviour
         ///TODO: swap mask logic (Animator)
         /// Swap 1>2 1>3 2>1 2>3 3>2 3>1
 
+        var switchMaskScript = FindAnyObjectByType<MaskSwitching>();
         switch (previousMask)
         {
             case MaskType.Happy:
                 switch (nextMask)
                 {
                     case MaskType.Sad:
-                        maskAnimator.Play("HappyToSad");
+                        switchMaskScript.oldMaskInt = 0;
+                        switchMaskScript.newMaskInt = 1;
+                        switchMaskScript.change = true;
+                        
                         break;
                     case MaskType.Angry:
-                        maskAnimator.Play("HappyToAngry");
+                        switchMaskScript.oldMaskInt = 0;
+                        switchMaskScript.newMaskInt = 2;
+                        switchMaskScript.change = true;
                         break;
                 }
                 break;
@@ -280,10 +286,14 @@ public class MaskController : MonoBehaviour
                 switch (nextMask)
                 {
                     case MaskType.Happy:
-                        maskAnimator.Play("SadToHappy");
+                        switchMaskScript.oldMaskInt = 1;
+                        switchMaskScript.newMaskInt = 0;
+                        switchMaskScript.change = true;
                         break;
                     case MaskType.Angry:
-                        maskAnimator.Play("SadToAngry");
+                        switchMaskScript.oldMaskInt = 1;
+                        switchMaskScript.newMaskInt = 2;
+                        switchMaskScript.change = true;
                         break;
                 }
                 break;
@@ -291,10 +301,14 @@ public class MaskController : MonoBehaviour
                 switch (nextMask)
                 {
                     case MaskType.Happy:
-                        maskAnimator.Play("AngryToHappy");
+                        switchMaskScript.oldMaskInt = 2;
+                        switchMaskScript.newMaskInt = 0;
+                        switchMaskScript.change = true;
                         break;
                     case MaskType.Sad:
-                        maskAnimator.Play("AngryToSad");
+                        switchMaskScript.oldMaskInt = 2;
+                        switchMaskScript.newMaskInt = 1;
+                        switchMaskScript.change = true;
                         break;
                 }
                 break;

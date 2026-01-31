@@ -21,11 +21,15 @@ public class MaskSwitching : MonoBehaviour
     public MaskSwitcher newMask;//for function to change the mask
     public MaskSwitcher oldMask;//for funtion to change the mask
 
+    [SerializeField] private GameObject angerMask;
+    [SerializeField] private GameObject sadnessMask;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        angerMask.SetActive(false);
+        sadnessMask.SetActive(false);
     }
 
     // Update is called once per frame
