@@ -116,7 +116,7 @@ public class MaskController : MonoBehaviour
 
     void ApplyDamage(ref int health, ref bool dead, int damageAmount, MaskType type)
     {
-        Debug.Log($"Mask {type} took {damageAmount} damage.");
+        //Debug.Log($"Mask {type} took {damageAmount} damage.");
         health -= damageAmount;
         health = Mathf.Max(0, health);
 
