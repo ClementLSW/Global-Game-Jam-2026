@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Bumper
+  - Ball
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
     locked: 0
   - name: Walls
     uniqueID: 2172862253
+    locked: 0
+  - name: Boss
+    uniqueID: 3684092985
     locked: 0
   - name: Obstacles
     uniqueID: 2631834065
