@@ -33,7 +33,15 @@ public class CollisionScript : MonoBehaviour
 
             Vector3 hitPos = collision.contacts[0].point; // this is where damage text spawns as an object
             GameObject instDamageNumber = Instantiate(damageTextCanvas, (Vector2)hitPos - hitNormal, Quaternion.identity); // instantiation
-            instDamageNumber.GetComponentInChildren<TextMeshProUGUI>().text = damageAmount.ToString();
+
+            if (isCritBumper == true)
+            {
+                instDamageNumber.GetComponentInChildren<TextMeshProUGUI>().text = (damageAmount*5).ToString();
+            }
+            else
+            {
+                instDamageNumber.GetComponentInChildren<TextMeshProUGUI>().text = damageAmount.ToString();
+            }
 
 
             if (isCritBumper == true)

@@ -81,7 +81,7 @@ public class MaskController : MonoBehaviour
         currentMask = (MaskType)Random.Range(0, 3);
 
         PositionMasks();
-        UpdateActiveMask();
+        //UpdateActiveMask();
     }
 
     public void TakeDamage(int damageAmount, bool isCritBumper = false, bool isSwapBumper = false)
@@ -146,7 +146,7 @@ public class MaskController : MonoBehaviour
 
         currentMask = nextMask;
         PositionMasks();
-        UpdateActiveMask();
+        //UpdateActiveMask();
         onMaskSwapped?.Invoke(currentMask);
     }
 
