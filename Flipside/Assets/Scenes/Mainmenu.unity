@@ -240,6 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b1df71cd8f43e47bd232f900d0d4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneController
+  restart: {fileID: -6164007031117731913, guid: 18c68fee017f25740b098bc637de3abf, type: 3}
+  pause: {fileID: -3628688527072957218, guid: 18c68fee017f25740b098bc637de3abf, type: 3}
 --- !u!4 &1083718778
 Transform:
   m_ObjectHideFlags: 0

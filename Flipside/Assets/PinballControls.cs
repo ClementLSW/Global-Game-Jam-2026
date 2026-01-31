@@ -118,6 +118,33 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""73513045-acf6-4921-bb3f-1e32b1d37da1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""6d356e06-e216-4058-9a33-8c886272309e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""83273bc1-5b4b-4803-9a77-b92ba9e37492"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -153,6 +180,39 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
                     ""action"": ""PullPlunger"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d9cfd83a-94e1-4258-932a-bbf337498e75"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5cd05671-e34d-44ea-831f-0f878eb87806"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d617f362-6201-4b2b-bd97-13eb3ae0ada1"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -176,6 +236,9 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
         m_Gameplay_LeftFlipper = m_Gameplay.FindAction("LeftFlipper", throwIfNotFound: true);
         m_Gameplay_RightFlipper = m_Gameplay.FindAction("RightFlipper", throwIfNotFound: true);
         m_Gameplay_PullPlunger = m_Gameplay.FindAction("PullPlunger", throwIfNotFound: true);
+        m_Gameplay_Restart = m_Gameplay.FindAction("Restart", throwIfNotFound: true);
+        m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_Start = m_Gameplay.FindAction("Start", throwIfNotFound: true);
     }
 
     ~@PinballControls()
@@ -259,6 +322,9 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_LeftFlipper;
     private readonly InputAction m_Gameplay_RightFlipper;
     private readonly InputAction m_Gameplay_PullPlunger;
+    private readonly InputAction m_Gameplay_Restart;
+    private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_Start;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
     /// </summary>
@@ -282,6 +348,18 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/PullPlunger".
         /// </summary>
         public InputAction @PullPlunger => m_Wrapper.m_Gameplay_PullPlunger;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/Restart".
+        /// </summary>
+        public InputAction @Restart => m_Wrapper.m_Gameplay_Restart;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/Start".
+        /// </summary>
+        public InputAction @Start => m_Wrapper.m_Gameplay_Start;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -317,6 +395,15 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
             @PullPlunger.started += instance.OnPullPlunger;
             @PullPlunger.performed += instance.OnPullPlunger;
             @PullPlunger.canceled += instance.OnPullPlunger;
+            @Restart.started += instance.OnRestart;
+            @Restart.performed += instance.OnRestart;
+            @Restart.canceled += instance.OnRestart;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+            @Start.started += instance.OnStart;
+            @Start.performed += instance.OnStart;
+            @Start.canceled += instance.OnStart;
         }
 
         /// <summary>
@@ -337,6 +424,15 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
             @PullPlunger.started -= instance.OnPullPlunger;
             @PullPlunger.performed -= instance.OnPullPlunger;
             @PullPlunger.canceled -= instance.OnPullPlunger;
+            @Restart.started -= instance.OnRestart;
+            @Restart.performed -= instance.OnRestart;
+            @Restart.canceled -= instance.OnRestart;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+            @Start.started -= instance.OnStart;
+            @Start.performed -= instance.OnStart;
+            @Start.canceled -= instance.OnStart;
         }
 
         /// <summary>
@@ -411,5 +507,26 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPullPlunger(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Restart" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRestart(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Start" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnStart(InputAction.CallbackContext context);
     }
 }
