@@ -35,27 +35,16 @@ public class BumperController : MonoBehaviour
         {
             bumpers[i] = bumperObjects[i].GetComponent<CollisionScript>();
         }
-
-        //AssignNewSwapBumper();
     }
 
     public static void RegisterHit()
     {
         critHitCounter++;
-        swapHitCounter++;
 
         if (critHitCounter >= Instance.hitsForCrit)
         {
             Instance.AssignNewCritBumper();
             critHitCounter = 0;
-        }
-
-        if (!Instance.swapBumperAssigned)
-        {
-            if (swapHitCounter >= Instance.hitsForSwap)
-            {
-                Instance.AssignNewSwapBumper();
-            }
         }
     }
 
@@ -68,24 +57,13 @@ public class BumperController : MonoBehaviour
         bumper.SetAsCritBumper();
     }
 
-    public void AssignNewSwapBumper()
-    {
-        CollisionScript bumper = GetRandomAvailableBumper();
-
-        if (bumper == null) return;
-
-        bumper.SetAsSwapBumper();
-        swapBumperAssigned = true;
-        swapHitCounter = 0;
-    }
-
     CollisionScript GetRandomAvailableBumper()
     {
         List<CollisionScript> available = new List<CollisionScript>();
 
         foreach (CollisionScript bumper in bumpers)
         {
-            if (!bumper.isCritBumper && !bumper.isSwapBumper)
+            if (!bumper.isCritBumper)
             {
                 available.Add(bumper);
             }
