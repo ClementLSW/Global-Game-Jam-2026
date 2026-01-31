@@ -109,6 +109,15 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PullPlunger"",
+                    ""type"": ""Button"",
+                    ""id"": ""e12b24be-c3e5-4b39-aee2-6d83177a91b0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -133,6 +142,17 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
                     ""action"": ""RightFlipper"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8eac3a20-b05d-4020-8466-15c9eda04153"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PullPlunger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -155,6 +175,7 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_LeftFlipper = m_Gameplay.FindAction("LeftFlipper", throwIfNotFound: true);
         m_Gameplay_RightFlipper = m_Gameplay.FindAction("RightFlipper", throwIfNotFound: true);
+        m_Gameplay_PullPlunger = m_Gameplay.FindAction("PullPlunger", throwIfNotFound: true);
     }
 
     ~@PinballControls()
@@ -237,6 +258,7 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_LeftFlipper;
     private readonly InputAction m_Gameplay_RightFlipper;
+    private readonly InputAction m_Gameplay_PullPlunger;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
     /// </summary>
@@ -256,6 +278,10 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/RightFlipper".
         /// </summary>
         public InputAction @RightFlipper => m_Wrapper.m_Gameplay_RightFlipper;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/PullPlunger".
+        /// </summary>
+        public InputAction @PullPlunger => m_Wrapper.m_Gameplay_PullPlunger;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -288,6 +314,9 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
             @RightFlipper.started += instance.OnRightFlipper;
             @RightFlipper.performed += instance.OnRightFlipper;
             @RightFlipper.canceled += instance.OnRightFlipper;
+            @PullPlunger.started += instance.OnPullPlunger;
+            @PullPlunger.performed += instance.OnPullPlunger;
+            @PullPlunger.canceled += instance.OnPullPlunger;
         }
 
         /// <summary>
@@ -305,6 +334,9 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
             @RightFlipper.started -= instance.OnRightFlipper;
             @RightFlipper.performed -= instance.OnRightFlipper;
             @RightFlipper.canceled -= instance.OnRightFlipper;
+            @PullPlunger.started -= instance.OnPullPlunger;
+            @PullPlunger.performed -= instance.OnPullPlunger;
+            @PullPlunger.canceled -= instance.OnPullPlunger;
         }
 
         /// <summary>
@@ -372,5 +404,12 @@ public partial class @PinballControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRightFlipper(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PullPlunger" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPullPlunger(InputAction.CallbackContext context);
     }
 }

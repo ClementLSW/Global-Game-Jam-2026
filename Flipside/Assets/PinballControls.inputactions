@@ -23,6 +23,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PullPlunger",
+                    "type": "Button",
+                    "id": "e12b24be-c3e5-4b39-aee2-6d83177a91b0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -45,6 +54,17 @@
                     "processors": "",
                     "groups": ";KBM",
                     "action": "RightFlipper",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8eac3a20-b05d-4020-8466-15c9eda04153",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PullPlunger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
