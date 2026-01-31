@@ -13,8 +13,8 @@ public class CollisionScript : MonoBehaviour
 
     public void Start()
     {
-        bumperController = GameController.Instance.GetComponent<BumperController>();
-        maskController = GameObject.Find("MaskController").GetComponent<MaskController>();
+        bumperController = BumperController.Instance;
+        maskController = MaskController.Instance;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

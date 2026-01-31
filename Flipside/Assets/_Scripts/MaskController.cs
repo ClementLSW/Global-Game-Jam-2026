@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public enum MaskType
 {
@@ -49,6 +51,8 @@ public class MaskController : MonoBehaviour
     private bool angryDead;
 
     private MaskType currentMask;
+
+    [SerializeField] private Animator maskAnimator;
 
     public MaskType CurrentMask => currentMask;
     public bool AllMasksDead => happyDead && sadDead && angryDead;
@@ -200,6 +204,7 @@ public class MaskController : MonoBehaviour
     public void SwapMasks()
     {
         Camera.main.GetComponent<CameraController>().Shake(0.3f, 1f);
+        FindAnyObjectByType<TransitionController>().TriggerNextLevel();
 
         if (AllMasksDead)
         {
@@ -213,8 +218,9 @@ public class MaskController : MonoBehaviour
         if (nextMask == currentMask)
             return;
 
+        var previousMask = currentMask;
         currentMask = nextMask;
-        PositionMasks();
+        PositionMasks(previousMask, nextMask);
         ResetHitsLeft();
 
         onMaskSwapped?.Invoke(currentMask);
@@ -251,6 +257,48 @@ public class MaskController : MonoBehaviour
 
         GetMaskObject(inactive[0]).transform.position = inactiveSlotA.position;
         GetMaskObject(inactive[1]).transform.position = inactiveSlotB.position;
+    }
+    void PositionMasks(MaskType previousMask, MaskType nextMask)
+    {
+        ///TODO: swap mask logic (Animator)
+        /// Swap 1>2 1>3 2>1 2>3 3>2 3>1
+
+        switch (previousMask)
+        {
+            case MaskType.Happy:
+                switch (nextMask)
+                {
+                    case MaskType.Sad:
+                        maskAnimator.Play("HappyToSad");
+                        break;
+                    case MaskType.Angry:
+                        maskAnimator.Play("HappyToAngry");
+                        break;
+                }
+                break;
+            case MaskType.Sad:
+                switch (nextMask)
+                {
+                    case MaskType.Happy:
+                        maskAnimator.Play("SadToHappy");
+                        break;
+                    case MaskType.Angry:
+                        maskAnimator.Play("SadToAngry");
+                        break;
+                }
+                break;
+            case MaskType.Angry:
+                switch (nextMask)
+                {
+                    case MaskType.Happy:
+                        maskAnimator.Play("AngryToHappy");
+                        break;
+                    case MaskType.Sad:
+                        maskAnimator.Play("AngryToSad");
+                        break;
+                }
+                break;
+        }
     }
 
     MaskType[] GetInactiveMasks()

@@ -1,16 +1,10 @@
+using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class Spotlight : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Spline path;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

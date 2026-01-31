@@ -19,11 +19,6 @@ public class BumperController : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
     }
 
     void Start()
