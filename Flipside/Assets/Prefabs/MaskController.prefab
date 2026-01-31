@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5197742417163107099}
   - component: {fileID: 4887705593059791908}
   - component: {fileID: 7045846033427764451}
+  - component: {fileID: 4132975185867038131}
   m_Layer: 0
   m_Name: HappyMask
   m_TagString: Untagged
@@ -128,6 +129,21 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &4132975185867038131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214695386617868401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144ee6f8921c5554bb5273e49455931e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskCollision
+  maskController: {fileID: 6605432374314232500}
+  damageAmount: 3
+  damageTextCanvas: {fileID: 3940710726964028676, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}
 --- !u!1 &1616282849626591064
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,15 +256,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29bf0021db7ae247a744288e557af30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
+  onMaskDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  onMaskDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
+  onMaskSwapped:
+    m_PersistentCalls:
+      m_Calls: []
+  onAllMasksDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
   happyMask: {fileID: 1214695386617868401}
   sadMask: {fileID: 7768591724308711850}
   angryMask: {fileID: 3799693101115072406}
   centerSlot: {fileID: 8479847980124283908}
   inactiveSlotA: {fileID: 3630711665624370250}
   inactiveSlotB: {fileID: 1552932028796771220}
+  centerSlotPosition: {x: 0, y: 0}
   startingHealth: 10000
   critMult: 5
-  currentMask: 0
+  ringFill: {fileID: 0}
+  maskHitsTotal: 20
+  maskHitsLeft: 0
+  damageTextCanvas: {fileID: 0}
+  immuneDuration: 1.5
 --- !u!1 &3799693101115072406
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +292,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2620132299028031687}
   - component: {fileID: 5297440647163029370}
+  - component: {fileID: 7843182144909316849}
+  - component: {fileID: 4761861047391235280}
   m_Layer: 0
   m_Name: AngryMask
   m_TagString: Untagged
@@ -340,6 +375,57 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!58 &7843182144909316849
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3799693101115072406}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
+--- !u!114 &4761861047391235280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3799693101115072406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144ee6f8921c5554bb5273e49455931e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskCollision
+  maskController: {fileID: 6605432374314232500}
+  damageAmount: 3
+  damageTextCanvas: {fileID: 3940710726964028676, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}
 --- !u!1 &6981731329167762092
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +467,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3103044191207397965}
   - component: {fileID: 4913843545960600350}
+  - component: {fileID: 1919885752642671644}
+  - component: {fileID: 7415597242852435801}
   m_Layer: 0
   m_Name: SadMask
   m_TagString: Untagged
@@ -462,3 +550,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!58 &1919885752642671644
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7768591724308711850}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
+--- !u!114 &7415597242852435801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7768591724308711850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144ee6f8921c5554bb5273e49455931e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskCollision
+  maskController: {fileID: 6605432374314232500}
+  damageAmount: 3
+  damageTextCanvas: {fileID: 3940710726964028676, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}

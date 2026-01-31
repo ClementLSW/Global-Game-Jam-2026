@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3035771812173546532}
   - component: {fileID: 2152374791567154398}
   m_Layer: 0
-  m_Name: DashPad Square
+  m_Name: DashPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 1363702359468350077}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6744, y: -0.8622, z: 0}
-  m_LocalScale: {x: 17.525875, y: 7.2720366, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.2320754, g: 0.82709163, b: 1, a: 0.23921569}
+  m_Color: {r: 1, g: 0.23137254, b: 0.5439771, a: 0.61960787}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -151,3 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc47bfe6e669e3469d847bf76ed298b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  minExitSpeed: 3
