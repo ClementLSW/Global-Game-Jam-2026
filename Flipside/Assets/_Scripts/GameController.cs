@@ -35,12 +35,12 @@ public class GameController : MonoBehaviour
 
     private void OnEnable()
     {
-        BallManager.Instance.onBallDrained.AddListener(onBallDrained);
+        BallManager.Instance.onBallDrained.AddListener(OnBallDrained);
     }
 
     private void OnDisable()
     {
-        BallManager.Instance.onBallDrained.RemoveListener(onBallDrained);
+        BallManager.Instance.onBallDrained.RemoveListener(OnBallDrained);
     }
 
     private void Start()
