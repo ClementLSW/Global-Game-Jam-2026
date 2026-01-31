@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum MaskType
 {
@@ -9,15 +10,23 @@ public enum MaskType
 
 public class MaskController : MonoBehaviour
 {
+    public static MaskController Instance { get; private set; }
+
+    [Header("Events")]
+    public UnityEvent<MaskType, float> onMaskDamaged;
+    public UnityEvent<MaskType> onMaskDestroyed;
+    public UnityEvent<MaskType> onMaskSwapped;
+    public UnityEvent onAllMasksDestroyed;
+
     [Header("Mask Objects")]
     public GameObject happyMask;
     public GameObject sadMask;
     public GameObject angryMask;
 
     [Header("Cached Positions")]
-    public Vector2 happyVector;
-    public Vector2 sadVector;
-    public Vector2 angryVector;
+    private Vector2 happyVector;
+    private Vector2 sadVector;
+    private Vector2 angryVector;
 
     [Header("Stats")]
     public int startingHealth = 10000;
@@ -31,8 +40,33 @@ public class MaskController : MonoBehaviour
     private bool sadDead;
     private bool angryDead;
 
-    public MaskType currentMask;
+    private MaskType currentMask;
 
+    public MaskType CurrentMask => currentMask;
+    public bool AllMasksDead => happyDead && sadDead && angryDead;
+
+    public float GetHealthPercent(MaskType type)
+    {
+        return type switch
+        {
+            MaskType.Happy => (float)happyHealth / startingHealth,
+            MaskType.Sad => (float)sadHealth / startingHealth,
+            MaskType.Angry => (float)angryHealth / startingHealth,
+            _ => 0f
+        };
+    }
+
+    public float CurrentMaskHealthPercent => GetHealthPercent(currentMask);
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     void Start()
     {
@@ -52,43 +86,50 @@ public class MaskController : MonoBehaviour
         UpdateActiveMask();
     }
 
-    public void TakeDamage(int damageAmount, bool isCrit)
+    public void TakeDamage(int damageAmount, bool isCrit = false)
     {
+        if(AllMasksDead) return;
+
         if (isCrit)
             damageAmount = Mathf.RoundToInt(damageAmount * critMult);
 
         switch (currentMask)
         {
             case MaskType.Happy:
-                ApplyDamage(ref happyHealth, ref happyDead, damageAmount);
+                ApplyDamage(ref happyHealth, ref happyDead, damageAmount, currentMask);
                 break;
 
             case MaskType.Sad:
-                ApplyDamage(ref sadHealth, ref sadDead, damageAmount);
+                ApplyDamage(ref sadHealth, ref sadDead, damageAmount, currentMask);
                 break;
 
             case MaskType.Angry:
-                ApplyDamage(ref angryHealth, ref angryDead, damageAmount);
+                ApplyDamage(ref angryHealth, ref angryDead, damageAmount, currentMask);
                 break;
         }
     }
 
-    void ApplyDamage(ref int health, ref bool dead, int damageAmount)
+    void ApplyDamage(ref int health, ref bool dead, int damageAmount, MaskType type)
     {
         health -= damageAmount;
+        health = Mathf.Max(0, health);
+
+        onMaskDamaged?.Invoke(type, (float)health / startingHealth);
 
         if (health <= 0 && !dead)
         {
             dead = true;
+            onMaskDestroyed?.Invoke(type);
             SwapMasks();
         }
     }
 
     void SwapMasks()
     {
-        if (happyDead && sadDead && angryDead)
+        if (AllMasksDead)
         {
-            WinGame();
+            //WinGame();
+            onAllMasksDestroyed?.Invoke();
             return;
         }
 
@@ -102,6 +143,7 @@ public class MaskController : MonoBehaviour
 
         currentMask = nextMask;
         UpdateActiveMask();
+        onMaskSwapped?.Invoke(currentMask);
     }
 
     MaskType GetHighestHealthAliveMask()
@@ -165,17 +207,12 @@ public class MaskController : MonoBehaviour
 
     void UpdateActiveMask()
     {
-        Collider happyCol = happyMask.GetComponent<Collider>();
-        Collider sadCol = sadMask.GetComponent<Collider>();
-        Collider angryCol = angryMask.GetComponent<Collider>();
+        Collider2D happyCol = happyMask.GetComponent<Collider2D>();
+        Collider2D sadCol = sadMask.GetComponent<Collider2D>();
+        Collider2D angryCol = angryMask.GetComponent<Collider2D>();
 
         if (happyCol != null) happyCol.enabled = (currentMask == MaskType.Happy);
         if (sadCol != null) sadCol.enabled = (currentMask == MaskType.Sad);
         if (angryCol != null) angryCol.enabled = (currentMask == MaskType.Angry);
-    }
-
-    public void WinGame()
-    {
-        // all masks ded
     }
 }
