@@ -10,7 +10,6 @@ public class CollisionScript : MonoBehaviour
     public bool isSwapBumper = false; // swap mask when hit
 
     public GameObject damageTextCanvas;
-    public TextMeshPro damageText;
 
 
     public void Start()
@@ -32,8 +31,9 @@ public class CollisionScript : MonoBehaviour
 
             maskController.TakeDamage(damageAmount, isCritBumper, isSwapBumper);
 
-            Vector3 hitPos = collision.contacts[0].point;
-            GameObject dTC = Instantiate(damageTextCanvas, hitPos, Quaternion.identity);
+            Vector3 hitPos = collision.contacts[0].point; // this is where damage text spawns as an object
+            GameObject instDamageNumber = Instantiate(damageTextCanvas, (Vector2)hitPos - hitNormal, Quaternion.identity); // instantiation
+            instDamageNumber.GetComponentInChildren<TextMeshProUGUI>().text = damageAmount.ToString();
 
 
             if (isCritBumper == true)
