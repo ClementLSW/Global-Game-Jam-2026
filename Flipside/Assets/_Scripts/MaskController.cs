@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum MaskType
 {
@@ -9,15 +10,27 @@ public enum MaskType
 
 public class MaskController : MonoBehaviour
 {
+    public static MaskController Instance { get; private set; }
+
+    [Header("Events")]
+    public UnityEvent<MaskType, float> onMaskDamaged;
+    public UnityEvent<MaskType> onMaskDestroyed;
+    public UnityEvent<MaskType> onMaskSwapped;
+    public UnityEvent onAllMasksDestroyed;
+
     [Header("Mask Objects")]
     public GameObject happyMask;
     public GameObject sadMask;
     public GameObject angryMask;
 
     [Header("Cached Positions")]
-    public Vector2 happyVector;
-    public Vector2 sadVector;
-    public Vector2 angryVector;
+    private Vector2 happyVector;
+    private Vector2 sadVector;
+    private Vector2 angryVector;
+    [Header("Mask Slots")]
+    public Transform centerSlot;
+    public Transform inactiveSlotA;
+    public Transform inactiveSlotB;
 
     [Header("Stats")]
     public int startingHealth = 10000;
@@ -31,89 +44,121 @@ public class MaskController : MonoBehaviour
     private bool sadDead;
     private bool angryDead;
 
-    public MaskType currentMask;
+    private MaskType currentMask;
 
+    public MaskType CurrentMask => currentMask;
+    public bool AllMasksDead => happyDead && sadDead && angryDead;
+
+    public float GetHealthPercent(MaskType type)
+    {
+        return type switch
+        {
+            MaskType.Happy => (float)happyHealth / startingHealth,
+            MaskType.Sad => (float)sadHealth / startingHealth,
+            MaskType.Angry => (float)angryHealth / startingHealth,
+            _ => 0f
+        };
+    }
+
+    public float CurrentMaskHealthPercent => GetHealthPercent(currentMask);
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     void Start()
     {
-        happyHealth = startingHealth;
-        sadHealth = startingHealth;
-        angryHealth = startingHealth;
+        happyHealth = sadHealth = angryHealth = startingHealth;
 
-        happyDead = false;
-        sadDead = false;
-        angryDead = false;
-
-        happyVector = happyMask.transform.position;
-        sadVector = sadMask.transform.position;
-        angryVector = angryMask.transform.position;
+        happyDead = sadDead = angryDead = false;
 
         currentMask = (MaskType)Random.Range(0, 3);
+
+        PositionMasks();
         UpdateActiveMask();
     }
 
-    public void TakeDamage(int damageAmount, bool isCrit)
+    public void TakeDamage(int damageAmount, bool isCritBumper = false, bool isSwapBumper = isfalse)
     {
-        if (isCrit)
+        if (AllMasksDead) return;
+
+        if (isCritBumper)
+        {
             damageAmount = Mathf.RoundToInt(damageAmount * critMult);
+        }
 
         switch (currentMask)
         {
             case MaskType.Happy:
-                ApplyDamage(ref happyHealth, ref happyDead, damageAmount);
+                ApplyDamage(ref happyHealth, ref happyDead, damageAmount, currentMask);
                 break;
 
             case MaskType.Sad:
-                ApplyDamage(ref sadHealth, ref sadDead, damageAmount);
+                ApplyDamage(ref sadHealth, ref sadDead, damageAmount, currentMask);
                 break;
 
             case MaskType.Angry:
-                ApplyDamage(ref angryHealth, ref angryDead, damageAmount);
+                ApplyDamage(ref angryHealth, ref angryDead, damageAmount, currentMask);
                 break;
         }
-    }
 
-    void ApplyDamage(ref int health, ref bool dead, int damageAmount)
-    {
-        health -= damageAmount;
-
-        if (health <= 0 && !dead)
+        if (isSwapBumper)
         {
-            dead = true;
             SwapMasks();
         }
     }
 
-    void SwapMasks()
+    void ApplyDamage(ref int health, ref bool dead, int damageAmount, MaskType type)
     {
-        if (happyDead && sadDead && angryDead)
+        health -= damageAmount;
+        health = Mathf.Max(0, health);
+
+        onMaskDamaged?.Invoke(type, (float)health / startingHealth);
+
+        if (health <= 0 && !dead)
         {
-            WinGame();
+            dead = true;
+            onMaskDestroyed?.Invoke(type);
+            SwapMasks();
+        }
+    }
+
+    public void SwapMasks()
+    {
+        if (AllMasksDead)
+        {
+            //WinGame();
+            onAllMasksDestroyed?.Invoke();
             return;
         }
 
-        MaskType previousMask = currentMask;
         MaskType nextMask = GetHighestHealthAliveMask();
 
-        if (previousMask == nextMask)
+        if (nextMask == currentMask)
             return;
 
-        SwapMaskPositions(previousMask, nextMask);
-
         currentMask = nextMask;
+        PositionMasks();
         UpdateActiveMask();
+        onMaskSwapped?.Invoke(currentMask);
     }
 
     MaskType GetHighestHealthAliveMask()
     {
-        MaskType bestMask = currentMask;
+        MaskType best = currentMask;
         int bestHealth = -1;
 
         Check(MaskType.Happy, happyHealth, happyDead);
         Check(MaskType.Sad, sadHealth, sadDead);
         Check(MaskType.Angry, angryHealth, angryDead);
 
-        return bestMask;
+        return best;
 
         void Check(MaskType type, int health, bool dead)
         {
@@ -122,27 +167,33 @@ public class MaskController : MonoBehaviour
             if (health > bestHealth)
             {
                 bestHealth = health;
-                bestMask = type;
+                best = type;
             }
         }
     }
 
-    void SwapMaskPositions(MaskType a, MaskType b)
+    void PositionMasks()
     {
-        GameObject maskA = GetMaskObject(a);
-        GameObject maskB = GetMaskObject(b);
+        GetMaskObject(currentMask).transform.position = centerSlot.position;
 
-        ref Vector2 posA = ref GetMaskVector(a);
-        ref Vector2 posB = ref GetMaskVector(b);
+        MaskType[] inactive = GetInactiveMasks();
 
-        // swap cached positions
-        Vector2 temp = posA;
-        posA = posB;
-        posB = temp;
+        GetMaskObject(inactive[0]).transform.position = inactiveSlotA.position;
+        GetMaskObject(inactive[1]).transform.position = inactiveSlotB.position;
+    }
 
-        // apply to transforms
-        maskA.transform.position = posA;
-        maskB.transform.position = posB;
+    MaskType[] GetInactiveMasks()
+    {
+        MaskType[] result = new MaskType[2];
+        int index = 0;
+
+        foreach (MaskType type in System.Enum.GetValues(typeof(MaskType)))
+        {
+            if (type == currentMask) continue;
+            result[index++] = type;
+        }
+
+        return result;
     }
 
     GameObject GetMaskObject(MaskType type)
@@ -156,26 +207,24 @@ public class MaskController : MonoBehaviour
         };
     }
 
-    ref Vector2 GetMaskVector(MaskType type)
-    {
-        if (type == MaskType.Happy) return ref happyVector;
-        if (type == MaskType.Sad) return ref sadVector;
-        return ref angryVector;
-    }
-
     void UpdateActiveMask()
     {
-        Collider happyCol = happyMask.GetComponent<Collider>();
-        Collider sadCol = sadMask.GetComponent<Collider>();
-        Collider angryCol = angryMask.GetComponent<Collider>();
+        Collider2D happyCol = happyMask.GetComponent<Collider2D>();
+        Collider2D sadCol = sadMask.GetComponent<Collider2D>();
+        Collider2D angryCol = angryMask.GetComponent<Collider2D>();
+        SetCollider(happyMask, currentMask == MaskType.Happy);
+        SetCollider(sadMask, currentMask == MaskType.Sad);
+        SetCollider(angryMask, currentMask == MaskType.Angry);
 
-        if (happyCol != null) happyCol.enabled = (currentMask == MaskType.Happy);
-        if (sadCol != null) sadCol.enabled = (currentMask == MaskType.Sad);
-        if (angryCol != null) angryCol.enabled = (currentMask == MaskType.Angry);
+        //happyMask.SetActive(currentMask == MaskType.Happy);
+        //sadMask.SetActive(currentMask == MaskType.Sad);
+        //angryMask.SetActive(currentMask == MaskType.Angry);
     }
 
-    public void WinGame()
+    void SetCollider(GameObject obj, bool enabled)
     {
-        // all masks ded
+        Collider col = obj.GetComponent<Collider>();
+        if (col != null)
+            col.enabled = enabled;
     }
 }
