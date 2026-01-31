@@ -84,7 +84,7 @@ public class MaskController : MonoBehaviour
         UpdateActiveMask();
     }
 
-    public void TakeDamage(int damageAmount, bool isCritBumper = false, bool isSwapBumper = isfalse)
+    public void TakeDamage(int damageAmount, bool isCritBumper = false, bool isSwapBumper = false)
     {
         if (AllMasksDead) return;
 
@@ -108,14 +108,15 @@ public class MaskController : MonoBehaviour
                 break;
         }
 
-        if (isSwapBumper)
-        {
-            SwapMasks();
-        }
+        //if (isSwapBumper)
+        //{
+        //    SwapMasks();
+        //}
     }
 
     void ApplyDamage(ref int health, ref bool dead, int damageAmount, MaskType type)
     {
+        Debug.Log($"Mask {type} took {damageAmount} damage.");
         health -= damageAmount;
         health = Mathf.Max(0, health);
 

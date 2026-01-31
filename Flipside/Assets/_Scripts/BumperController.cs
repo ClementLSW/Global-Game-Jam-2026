@@ -7,8 +7,11 @@ public class BumperController : MonoBehaviour
 
     [Header("Settings")]
     public int hitsForCrit = 8;
+    public int hitsForSwap = 12;
 
-    public static int hitCounter = 0;
+    public static int critHitCounter = 0;
+    public static int swapHitCounter = 0;
+    public bool swapBumperAssigned = false;
 
     public CollisionScript[] bumpers;
 
@@ -33,17 +36,26 @@ public class BumperController : MonoBehaviour
             bumpers[i] = bumperObjects[i].GetComponent<CollisionScript>();
         }
 
-        AssignNewSwapBumper();
+        //AssignNewSwapBumper();
     }
 
     public static void RegisterHit()
     {
-        hitCounter++;
+        critHitCounter++;
+        swapHitCounter++;
 
-        if (hitCounter >= Instance.hitsForCrit)
+        if (critHitCounter >= Instance.hitsForCrit)
         {
             Instance.AssignNewCritBumper();
-            hitCounter = 0;
+            critHitCounter = 0;
+        }
+
+        if (!Instance.swapBumperAssigned)
+        {
+            if (swapHitCounter >= Instance.hitsForSwap)
+            {
+                Instance.AssignNewSwapBumper();
+            }
         }
     }
 
@@ -63,6 +75,8 @@ public class BumperController : MonoBehaviour
         if (bumper == null) return;
 
         bumper.SetAsSwapBumper();
+        swapBumperAssigned = true;
+        swapHitCounter = 0;
     }
 
     CollisionScript GetRandomAvailableBumper()

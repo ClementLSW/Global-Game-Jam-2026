@@ -11,7 +11,7 @@ public class CollisionScript : MonoBehaviour
 
     public void Start()
     {
-        bumperController = GameObject.Find("BumperController").GetComponent<BumperController>();
+        bumperController = GameController.Instance.GetComponent<BumperController>();
         maskController = GameObject.Find("MaskController").GetComponent<MaskController>();
     }
 
@@ -19,6 +19,7 @@ public class CollisionScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
+            GameObject hit = collision.gameObject;
             BumperController.RegisterHit();
 
             ContactPoint2D contact = collision.contacts[0];
@@ -29,26 +30,48 @@ public class CollisionScript : MonoBehaviour
 
             if (isCritBumper == true)
             {
-                isCritBumper = false;
+                ResetCritBumper();
             }
 
             if (isSwapBumper == true)
             {
-                isSwapBumper = false;
+                ResetSwapBumper();
+                MaskController.Instance.SwapMasks();
                 bumperController.AssignNewSwapBumper(); // mask swapping also called in takedamage function lol
             }
+
+            hit.GetComponent<Ball>().ReflectBall(hitNormal, hitPoint);
         }
     }
 
     public void SetAsCritBumper()
     {
         isCritBumper = true;
+        GetComponent<SpriteRenderer>().color = Color.orange;
+        Debug.Log("Crit bumper set!");
         // do crit bumper visuals here
     }
 
     public void SetAsSwapBumper()
     {
         isSwapBumper = true;
+        GetComponent<SpriteRenderer>().color = Color.cyan;
+        Debug.Log("Swap bumper set!");
         // do crit bumper visuals here
+    }
+
+    public void ResetCritBumper()
+    {
+        isCritBumper = false;
+        GetComponent<SpriteRenderer>().color = Color.white;
+        Debug.Log("Crit bumper reset!");
+    }
+
+    public void ResetSwapBumper()
+    {
+        isSwapBumper = false;
+        GetComponent<SpriteRenderer>().color = Color.white;
+        BumperController.Instance.swapBumperAssigned = false;
+        Debug.Log("Swap bumper reset!");
     }
 }
