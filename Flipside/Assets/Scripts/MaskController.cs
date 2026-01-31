@@ -14,10 +14,10 @@ public class MaskController : MonoBehaviour
     public GameObject sadMask;
     public GameObject angryMask;
 
-    [Header("Cached Positions")]
-    public Vector2 happyVector;
-    public Vector2 sadVector;
-    public Vector2 angryVector;
+    [Header("Mask Slots")]
+    public Transform centerSlot;
+    public Transform inactiveSlotA;
+    public Transform inactiveSlotB;
 
     [Header("Stats")]
     public int startingHealth = 10000;
@@ -33,29 +33,24 @@ public class MaskController : MonoBehaviour
 
     public MaskType currentMask;
 
-
     void Start()
     {
-        happyHealth = startingHealth;
-        sadHealth = startingHealth;
-        angryHealth = startingHealth;
+        happyHealth = sadHealth = angryHealth = startingHealth;
 
-        happyDead = false;
-        sadDead = false;
-        angryDead = false;
-
-        happyVector = happyMask.transform.position;
-        sadVector = sadMask.transform.position;
-        angryVector = angryMask.transform.position;
+        happyDead = sadDead = angryDead = false;
 
         currentMask = (MaskType)Random.Range(0, 3);
+
+        PositionMasks();
         UpdateActiveMask();
     }
 
-    public void TakeDamage(int damageAmount, bool isCrit)
+    public void TakeDamage(int damageAmount, bool isCritBumper, bool isSwapBumper)
     {
-        if (isCrit)
+        if (isCritBumper)
+        {
             damageAmount = Mathf.RoundToInt(damageAmount * critMult);
+        }
 
         switch (currentMask)
         {
@@ -71,11 +66,16 @@ public class MaskController : MonoBehaviour
                 ApplyDamage(ref angryHealth, ref angryDead, damageAmount);
                 break;
         }
+
+        if (isSwapBumper)
+        {
+            SwapMasks();
+        }
     }
 
-    void ApplyDamage(ref int health, ref bool dead, int damageAmount)
+    void ApplyDamage(ref int health, ref bool dead, int damage)
     {
-        health -= damageAmount;
+        health -= damage;
 
         if (health <= 0 && !dead)
         {
@@ -84,7 +84,7 @@ public class MaskController : MonoBehaviour
         }
     }
 
-    void SwapMasks()
+    public void SwapMasks()
     {
         if (happyDead && sadDead && angryDead)
         {
@@ -92,28 +92,26 @@ public class MaskController : MonoBehaviour
             return;
         }
 
-        MaskType previousMask = currentMask;
         MaskType nextMask = GetHighestHealthAliveMask();
 
-        if (previousMask == nextMask)
+        if (nextMask == currentMask)
             return;
 
-        SwapMaskPositions(previousMask, nextMask);
-
         currentMask = nextMask;
+        PositionMasks();
         UpdateActiveMask();
     }
 
     MaskType GetHighestHealthAliveMask()
     {
-        MaskType bestMask = currentMask;
+        MaskType best = currentMask;
         int bestHealth = -1;
 
         Check(MaskType.Happy, happyHealth, happyDead);
         Check(MaskType.Sad, sadHealth, sadDead);
         Check(MaskType.Angry, angryHealth, angryDead);
 
-        return bestMask;
+        return best;
 
         void Check(MaskType type, int health, bool dead)
         {
@@ -122,27 +120,33 @@ public class MaskController : MonoBehaviour
             if (health > bestHealth)
             {
                 bestHealth = health;
-                bestMask = type;
+                best = type;
             }
         }
     }
 
-    void SwapMaskPositions(MaskType a, MaskType b)
+    void PositionMasks()
     {
-        GameObject maskA = GetMaskObject(a);
-        GameObject maskB = GetMaskObject(b);
+        GetMaskObject(currentMask).transform.position = centerSlot.position;
 
-        ref Vector2 posA = ref GetMaskVector(a);
-        ref Vector2 posB = ref GetMaskVector(b);
+        MaskType[] inactive = GetInactiveMasks();
 
-        // swap cached positions
-        Vector2 temp = posA;
-        posA = posB;
-        posB = temp;
+        GetMaskObject(inactive[0]).transform.position = inactiveSlotA.position;
+        GetMaskObject(inactive[1]).transform.position = inactiveSlotB.position;
+    }
 
-        // apply to transforms
-        maskA.transform.position = posA;
-        maskB.transform.position = posB;
+    MaskType[] GetInactiveMasks()
+    {
+        MaskType[] result = new MaskType[2];
+        int index = 0;
+
+        foreach (MaskType type in System.Enum.GetValues(typeof(MaskType)))
+        {
+            if (type == currentMask) continue;
+            result[index++] = type;
+        }
+
+        return result;
     }
 
     GameObject GetMaskObject(MaskType type)
@@ -156,22 +160,22 @@ public class MaskController : MonoBehaviour
         };
     }
 
-    ref Vector2 GetMaskVector(MaskType type)
-    {
-        if (type == MaskType.Happy) return ref happyVector;
-        if (type == MaskType.Sad) return ref sadVector;
-        return ref angryVector;
-    }
-
     void UpdateActiveMask()
     {
-        Collider happyCol = happyMask.GetComponent<Collider>();
-        Collider sadCol = sadMask.GetComponent<Collider>();
-        Collider angryCol = angryMask.GetComponent<Collider>();
+        SetCollider(happyMask, currentMask == MaskType.Happy);
+        SetCollider(sadMask, currentMask == MaskType.Sad);
+        SetCollider(angryMask, currentMask == MaskType.Angry);
 
-        if (happyCol != null) happyCol.enabled = (currentMask == MaskType.Happy);
-        if (sadCol != null) sadCol.enabled = (currentMask == MaskType.Sad);
-        if (angryCol != null) angryCol.enabled = (currentMask == MaskType.Angry);
+        //happyMask.SetActive(currentMask == MaskType.Happy);
+        //sadMask.SetActive(currentMask == MaskType.Sad);
+        //angryMask.SetActive(currentMask == MaskType.Angry);
+    }
+
+    void SetCollider(GameObject obj, bool enabled)
+    {
+        Collider col = obj.GetComponent<Collider>();
+        if (col != null)
+            col.enabled = enabled;
     }
 
     public void WinGame()
