@@ -31,7 +31,7 @@ public class Target_Set : MonoBehaviour
     {
         Debug.Log("All targets have been hit!");
         // Implement additional logic for when all targets are hit
-        MaskController.Instance.TakeDamage(25);
+        MaskController.Instance.TakeDirectDamage(25);
 
         ActivateAllTargets();
     }
