@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Rendering;
+using TMPro;
 
 public class CollisionScript : MonoBehaviour
 {
@@ -8,6 +8,10 @@ public class CollisionScript : MonoBehaviour
     public int damageAmount;
     public bool isCritBumper = false; // mask takes more damage when hit
     public bool isSwapBumper = false; // swap mask when hit
+
+    public GameObject damageTextCanvas;
+    public TextMeshPro damageText;
+
 
     public void Start()
     {
@@ -27,6 +31,10 @@ public class CollisionScript : MonoBehaviour
             Vector2 hitNormal = contact.normal;
 
             maskController.TakeDamage(damageAmount, isCritBumper, isSwapBumper);
+
+            Vector3 hitPos = collision.contacts[0].point;
+            GameObject dTC = Instantiate(damageTextCanvas, hitPos, Quaternion.identity);
+
 
             if (isCritBumper == true)
             {

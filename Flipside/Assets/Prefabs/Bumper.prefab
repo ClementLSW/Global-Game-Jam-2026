@@ -146,3 +146,4 @@ MonoBehaviour:
   damageAmount: 5
   isCritBumper: 0
   isSwapBumper: 0
+  damageText: {fileID: 2176790055282802085, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}
