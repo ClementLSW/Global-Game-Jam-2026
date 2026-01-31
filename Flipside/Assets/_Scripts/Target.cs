@@ -37,7 +37,7 @@ public class Target : MonoBehaviour
     {
         state = TargetState.Hit;
         spriteRenderer.color = Color.gray; // Change color to indicate it has been hit
-        MaskController.Instance.TakeDamage(5);
+        MaskController.Instance.TakeDirectDamage(5);
         Debug.Log("Target hit!");
 
         // Notify the Target_Set that this target has been hit
