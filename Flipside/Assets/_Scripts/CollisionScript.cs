@@ -12,6 +12,7 @@ public class CollisionScript : MonoBehaviour
     public bool isCritBumper = false; // mask takes more damage when hit
 
     public GameObject damageTextCanvas;
+    public HitStop hitStop;
 
     [Header("VFX")]
     [SerializeField] private GameObject ringVfxGO;
@@ -22,6 +23,7 @@ public class CollisionScript : MonoBehaviour
     {
         bumperController = BumperController.Instance;
         maskController = MaskController.Instance;
+        hitStop = GameObject.Find("HitStop").GetComponent<HitStop>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -45,6 +47,7 @@ public class CollisionScript : MonoBehaviour
             maskController.TakeBumperDamage(damageAmount, isCritBumper);
 
             Camera.main.GetComponent<CameraController>().Shake(0.05f, 0.05f);
+            hitStop.StopTime(0.05f, 6, 0.15f);
 
             Vector3 hitPos = collision.contacts[0].point; // this is where damage text spawns as an object
             GameObject instDamageNumber = Instantiate(damageTextCanvas, (Vector2)hitPos - hitNormal, Quaternion.identity); // instantiation
