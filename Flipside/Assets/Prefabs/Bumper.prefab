@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 2439052475576287957}
   - component: {fileID: 4400669138738716202}
   - component: {fileID: 5539744707500696421}
+  - component: {fileID: 7741756243862553212}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Bumper
@@ -181,6 +182,9 @@ MonoBehaviour:
   damageAmount: 1
   isCritBumper: 0
   damageTextCanvas: {fileID: 3940710726964028676, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}
+  hitStop: {fileID: 0}
+  ringVfxGO: {fileID: 0}
+  hitVfxGO: {fileID: 0}
   BumperSprite: {fileID: 1572674050562565084}
   LightSprite: {fileID: 1089180966811746451}
   bumperAnim: {fileID: 5539744707500696421}
@@ -206,6 +210,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7741756243862553212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924334327600338188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c6e65e60c28944ca481baa8a84d402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitStop
+  speed: 0
 --- !u!1 &4839467564349149086
 GameObject:
   m_ObjectHideFlags: 0
