@@ -145,5 +145,6 @@ MonoBehaviour:
   maskController: {fileID: 0}
   damageAmount: 1
   isCritBumper: 0
-  isSwapBumper: 0
   damageTextCanvas: {fileID: 3940710726964028676, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}
+  ringVfxGO: {fileID: 6304834676974438631, guid: 49132f735b3b1464bb26f7eb4efe5523, type: 3}
+  hitVfxGO: {fileID: 1922687740952642528, guid: 0b994a7ac0d5a3449a633f911f13c5d0, type: 3}

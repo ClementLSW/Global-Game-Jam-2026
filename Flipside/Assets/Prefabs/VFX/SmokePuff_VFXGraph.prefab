@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1196729731792440064}
   - component: {fileID: 8387083087337981255}
   - component: {fileID: 6285754301870737111}
+  - component: {fileID: 1565154373453163755}
   m_Layer: 0
   m_Name: SmokePuff_VFXGraph
   m_TagString: Untagged
@@ -118,3 +119,16 @@ VFXRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
+--- !u!114 &1565154373453163755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319831153307179371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab1d751266841d4d90713b1cb0806ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelfDestruct
+  duration: 3

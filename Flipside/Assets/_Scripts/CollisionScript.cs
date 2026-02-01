@@ -1,14 +1,21 @@
 using UnityEngine;
 using TMPro;
+using UnityEditor.Rendering;
+using UnityEngine.VFX;
 
 public class CollisionScript : MonoBehaviour
 {
+    [Header("General")]
     public BumperController bumperController;
     public MaskController maskController;
     public int damageAmount;
     public bool isCritBumper = false; // mask takes more damage when hit
 
     public GameObject damageTextCanvas;
+
+    [Header("VFX")]
+    [SerializeField] private GameObject ringVfxGO;
+    [SerializeField] private GameObject hitVfxGO;
 
 
     public void Start()
@@ -21,6 +28,13 @@ public class CollisionScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
+            #region VFX
+            Instantiate(ringVfxGO, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            GameObject hitVfx = Instantiate(hitVfxGO, collision.gameObject.transform.position, Quaternion.identity);
+            VisualEffect hitVfxGraph = hitVfx.GetComponent<VisualEffect>();
+            hitVfxGraph.SetVector4("Color 2", maskController.activeColor);
+            #endregion
+
             GameObject hit = collision.gameObject;
             BumperController.RegisterHit();
 
