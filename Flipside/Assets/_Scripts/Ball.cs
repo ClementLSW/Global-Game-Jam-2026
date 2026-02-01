@@ -5,6 +5,12 @@ public class Ball : MonoBehaviour
     private Rigidbody2D rb;
 
     public Rigidbody2D RigidBody => rb;
+
+    public float currentStagnantT = 0f;
+    public float stagnantT = 3f;
+    public bool isTouchingFlipper = false;
+    public bool isInPlay = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,5 +36,38 @@ public class Ball : MonoBehaviour
         //Vector2 offset = (Vector2)transform.position - hitPoint;
         //float spinFactor = 5f;
         //rb.angularVelocity += offset.x * spinFactor;
+    }
+
+    public void Update()
+    {
+        if(rb.linearVelocity.magnitude < 0.1f && !isTouchingFlipper && isInPlay) // In Play, Not Moving, Not Touching Flipper
+        {
+            currentStagnantT += Time.deltaTime;
+            if (currentStagnantT >= stagnantT)
+            {
+                rb.AddForce(new Vector2(0.2f, 5f), ForceMode2D.Impulse);
+                currentStagnantT = 0f;
+            }
+        }
+        else
+        {
+            currentStagnantT = 0f;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Contains("Flipper"))
+        {
+            isTouchingFlipper = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Contains("Flipper"))
+        {
+            isTouchingFlipper = false;
+        }
     }
 }

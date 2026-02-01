@@ -50,6 +50,7 @@ public class LaunchChute : MonoBehaviour
         float pullDistance = Vector2.Distance(plunger.position, restPosition);
         float forceToApply = (pullDistance / maxPullDistance) * releaseForce;
         plunger.AddForce(Vector2.up * forceToApply, ForceMode2D.Impulse);
+        BallManager.Instance.ActiveBall.isInPlay = true;
     }
 
     // Update is called once per frame
