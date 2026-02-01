@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{93d824d4-d505-4a1a-a88d-151e71c9cd3d}">
+		<property name="assetPath">
+			<value>powerUp3.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.1112698412698412</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{26d4306c-3e2c-4e20-8422-7993239ab2a4}</destination>
+		</relationship>
+	</object>
+</objects>

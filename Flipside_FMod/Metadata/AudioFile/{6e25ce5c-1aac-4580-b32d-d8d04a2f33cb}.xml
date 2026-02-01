@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{6e25ce5c-1aac-4580-b32d-d8d04a2f33cb}">
+		<property name="assetPath">
+			<value>boss hit Kick_Punchy01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.62444444444444447</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{26d4306c-3e2c-4e20-8422-7993239ab2a4}</destination>
+		</relationship>
+	</object>
+</objects>
