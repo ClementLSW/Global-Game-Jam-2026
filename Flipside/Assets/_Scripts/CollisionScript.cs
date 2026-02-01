@@ -1,14 +1,22 @@
 using UnityEngine;
 using TMPro;
+using UnityEditor.Rendering;
+using UnityEngine.VFX;
 
 public class CollisionScript : MonoBehaviour
 {
+    [Header("General")]
     public BumperController bumperController;
     public MaskController maskController;
     public int damageAmount;
     public bool isCritBumper = false; // mask takes more damage when hit
 
     public GameObject damageTextCanvas;
+    public HitStop hitStop;
+
+    [Header("VFX")]
+    [SerializeField] private GameObject ringVfxGO;
+    [SerializeField] private GameObject hitVfxGO;
 
     public SpriteRenderer BumperSprite;
     public SpriteRenderer LightSprite;
@@ -20,12 +28,20 @@ public class CollisionScript : MonoBehaviour
     {
         bumperController = BumperController.Instance;
         maskController = MaskController.Instance;
+        hitStop = GameObject.Find("HitStop").GetComponent<HitStop>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
+            #region VFX
+            Instantiate(ringVfxGO, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            GameObject hitVfx = Instantiate(hitVfxGO, collision.gameObject.transform.position, Quaternion.identity);
+            VisualEffect hitVfxGraph = hitVfx.GetComponent<VisualEffect>();
+            hitVfxGraph.SetVector4("Color 2", maskController.activeColor);
+            #endregion
+
             GameObject hit = collision.gameObject;
             BumperController.RegisterHit();
 
@@ -38,6 +54,7 @@ public class CollisionScript : MonoBehaviour
             maskController.TakeBumperDamage(damageAmount, isCritBumper);
 
             Camera.main.GetComponent<CameraController>().Shake(0.05f, 0.05f);
+            hitStop.StopTime(0.05f, 6, 0.15f);
 
             Vector3 hitPos = collision.contacts[0].point; // this is where damage text spawns as an object
             GameObject instDamageNumber = Instantiate(damageTextCanvas, (Vector2)hitPos - hitNormal, Quaternion.identity); // instantiation
