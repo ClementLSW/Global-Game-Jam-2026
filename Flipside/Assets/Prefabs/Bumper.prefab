@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 923041199201573044}
   - component: {fileID: 2439052475576287957}
   - component: {fileID: 4400669138738716202}
+  - component: {fileID: 4293845577868741316}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Bumper
@@ -148,3 +149,16 @@ MonoBehaviour:
   damageTextCanvas: {fileID: 3940710726964028676, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}
   ringVfxGO: {fileID: 6304834676974438631, guid: 49132f735b3b1464bb26f7eb4efe5523, type: 3}
   hitVfxGO: {fileID: 1922687740952642528, guid: 0b994a7ac0d5a3449a633f911f13c5d0, type: 3}
+--- !u!114 &4293845577868741316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924334327600338188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c6e65e60c28944ca481baa8a84d402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitStop
+  speed: 0

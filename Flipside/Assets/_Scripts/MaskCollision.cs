@@ -8,6 +8,7 @@ public class MaskCollision : MonoBehaviour
     public int damageAmount;
 
     public GameObject damageTextCanvas;
+    public HitStop hitStop;
 
     [Header("VFX")]
     [SerializeField] private GameObject ringVfxGO;
@@ -17,6 +18,7 @@ public class MaskCollision : MonoBehaviour
     public void Start()
     {
         maskController = GameObject.Find("MaskController").GetComponent<MaskController>();
+        hitStop = GameObject.Find("HitStop").GetComponent<HitStop>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -44,6 +46,7 @@ public class MaskCollision : MonoBehaviour
 
             maskController.TakeDirectDamage(damageAmount);
 
+            hitStop.StopTime(0.05f, 6, 0.15f);
             Camera.main.GetComponent<CameraController>().Shake(0.1f, 0.25f);
 
             hit.GetComponent<Ball>().ReflectBall(hitNormal, hitPoint);
