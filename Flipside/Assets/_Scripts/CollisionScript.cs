@@ -10,6 +10,11 @@ public class CollisionScript : MonoBehaviour
 
     public GameObject damageTextCanvas;
 
+    public SpriteRenderer BumperSprite;
+    public SpriteRenderer LightSprite;
+
+    public Animator bumperAnim;
+
 
     public void Start()
     {
@@ -23,6 +28,8 @@ public class CollisionScript : MonoBehaviour
         {
             GameObject hit = collision.gameObject;
             BumperController.RegisterHit();
+
+            bumperAnim.SetTrigger("Hit");
 
             ContactPoint2D contact = collision.contacts[0];
             Vector2 hitPoint = contact.point;
@@ -57,7 +64,8 @@ public class CollisionScript : MonoBehaviour
     public void SetAsCritBumper()
     {
         isCritBumper = true;
-        GetComponent<SpriteRenderer>().color = Color.orange;
+        LightSprite.color = Color.orange;
+        BumperSprite.color = Color.orange;
         Debug.Log("Crit bumper set!");
         // do crit bumper visuals here
     }
@@ -65,7 +73,8 @@ public class CollisionScript : MonoBehaviour
     public void ResetCritBumper()
     {
         isCritBumper = false;
-        GetComponent<SpriteRenderer>().color = Color.white;
+        LightSprite.color = Color.white;
+        BumperSprite.color = Color.white;
         Debug.Log("Crit bumper reset!");
     }
 }
