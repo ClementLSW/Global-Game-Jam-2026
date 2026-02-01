@@ -675,6 +675,71 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &57161791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 57161793}
+  - component: {fileID: 57161792}
+  m_Layer: 0
+  m_Name: MusicSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &57161792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57161791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 126329961
+      Data2: 1248460112
+      Data3: -1736773986
+      Data4: 33904697
+    Path: event:/BGM
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: Emotion
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &57161793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57161791}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.66403, y: -0.10044, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &58489656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -943,6 +1008,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &92121046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2923242533026894789, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+  m_PrefabInstance: {fileID: 260073342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &96732764
 GameObject:
   m_ObjectHideFlags: 0
@@ -3128,6 +3198,34 @@ PrefabInstance:
       propertyPath: damageTextCanvas
       value: 
       objectReference: {fileID: 1366611300}
+    - target: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      propertyPath: onMaskDamaged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      propertyPath: onMaskDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      propertyPath: onMaskDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1588398258}
+    - target: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      propertyPath: onMaskDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      propertyPath: onMaskDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      propertyPath: onMaskDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FMODUnity.StudioEventEmitter, FMODUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      propertyPath: onMaskDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6981731329167762092, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3155,7 +3253,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2923242533026894789, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1588398258}
+    - targetCorrespondingSourceObject: {fileID: 1214695386617868401, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1812808302}
+    - targetCorrespondingSourceObject: {fileID: 7768591724308711850, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1540010036}
+    - targetCorrespondingSourceObject: {fileID: 3799693101115072406, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1956860113}
   m_SourcePrefab: {fileID: 100100000, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
 --- !u!1 &260565669
 GameObject:
@@ -14245,9 +14355,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1228412599}
   - component: {fileID: 1228412598}
-  - component: {fileID: 1228412597}
   - component: {fileID: 1228412600}
   - component: {fileID: 1228412601}
+  - component: {fileID: 1228412602}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14255,14 +14365,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1228412597
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228412596}
-  m_Enabled: 1
 --- !u!20 &1228412598
 Camera:
   m_ObjectHideFlags: 0
@@ -14391,6 +14493,20 @@ MonoBehaviour:
   shakeStrength: 0.3
   shakeDuration: 0.2
   ballTag: Ball
+--- !u!114 &1228412602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228412596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &1249080434
 GameObject:
   m_ObjectHideFlags: 0
@@ -14596,7 +14712,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3776556562464821494, guid: ab0fe0798ba5cb54991a836e2fccae51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1273160426}
   m_SourcePrefab: {fileID: 100100000, guid: ab0fe0798ba5cb54991a836e2fccae51, type: 3}
 --- !u!4 &1255991452 stripped
 Transform:
@@ -14797,6 +14916,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1813901934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1273160422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3776556562464821494, guid: ab0fe0798ba5cb54991a836e2fccae51, type: 3}
+  m_PrefabInstance: {fileID: 1255991451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1273160426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273160422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1324765471
+      Data2: 1317697346
+      Data3: -288013397
+      Data4: 1792783336
+    Path: event:/FlipperHit
+  Event: 
+  EventPlayTrigger: 9
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1291746297
 GameObject:
   m_ObjectHideFlags: 0
@@ -16949,6 +17104,44 @@ MonoBehaviour:
     - rid: 7279655410677055495
       type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data: 
+--- !u!1 &1540010031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7768591724308711850, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+  m_PrefabInstance: {fileID: 260073342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1540010036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540010031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 122174346
+      Data2: 1238873012
+      Data3: 931720866
+      Data4: -1764272924
+    Path: event:/BossHit
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: Emotion
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1540443769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17817,12 +18010,43 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
   m_PrefabInstance: {fileID: 260073342}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 92121046}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b29bf0021db7ae247a744288e557af30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
+--- !u!114 &1588398258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92121046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 122174346
+      Data2: 1238873012
+      Data3: 931720866
+      Data4: -1764272924
+    Path: event:/BossHit
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1593043452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20728,6 +20952,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1813901934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15}
+--- !u!1 &1812808297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1214695386617868401, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+  m_PrefabInstance: {fileID: 260073342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1812808302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812808297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 122174346
+      Data2: 1238873012
+      Data3: 931720866
+      Data4: -1764272924
+    Path: event:/BossHit
+  Event: 
+  EventPlayTrigger: 9
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: Emotion
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1813762904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22171,6 +22433,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1813901934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20}
+--- !u!1 &1956860108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3799693101115072406, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+  m_PrefabInstance: {fileID: 260073342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1956860113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956860108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 122174346
+      Data2: 1238873012
+      Data3: 931720866
+      Data4: -1764272924
+    Path: event:/BossHit
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: Emotion
+    Value: 2
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2004661086
 GameObject:
   m_ObjectHideFlags: 0
@@ -23541,6 +23841,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flipper L
       objectReference: {fileID: 0}
+    - target: {fileID: 8749622205900679517, guid: 051aa5a64694d8a469300cf9cedda217, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749622205900679517, guid: 051aa5a64694d8a469300cf9cedda217, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1952
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749622205900679517, guid: 051aa5a64694d8a469300cf9cedda217, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23616,6 +23928,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259254748}
     m_Modifications:
+    - target: {fileID: 954716484949023453, guid: ab0fe0798ba5cb54991a836e2fccae51, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 954716484949023453, guid: ab0fe0798ba5cb54991a836e2fccae51, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1533
+      objectReference: {fileID: 0}
+    - target: {fileID: 954716484949023453, guid: ab0fe0798ba5cb54991a836e2fccae51, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 1443942666721205493, guid: ab0fe0798ba5cb54991a836e2fccae51, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -23712,3 +24036,4 @@ SceneRoots:
   - {fileID: 2134021897}
   - {fileID: 1515678002}
   - {fileID: 589928213}
+  - {fileID: 57161793}

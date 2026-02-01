@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 4400669138738716202}
   - component: {fileID: 5539744707500696421}
   - component: {fileID: 7741756243862553212}
+  - component: {fileID: 2559015892359006992}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Bumper
@@ -223,6 +224,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitStop
   speed: 0
+--- !u!114 &2559015892359006992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924334327600338188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1559336183
+      Data2: 1222093148
+      Data3: -1235785596
+      Data4: 841745313
+    Path: event:/BumperHit
+  Event: 
+  EventPlayTrigger: 9
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: Critical
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &4839467564349149086
 GameObject:
   m_ObjectHideFlags: 0

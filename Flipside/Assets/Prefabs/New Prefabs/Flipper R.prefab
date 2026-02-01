@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 132492363076382902}
   - component: {fileID: 8583200474639997049}
   - component: {fileID: 3038664049327443497}
+  - component: {fileID: 5963141870615981699}
   m_Layer: 0
   m_Name: Flipper R
   m_TagString: Untagged
@@ -106,6 +107,37 @@ MonoBehaviour:
   "\u5FEB\u4E50\u7684\u624B": {fileID: 21300000, guid: 0843eb83f4c2cb74d891311abe26e2d6, type: 3}
   "\u751F\u6C14\u7684\u624B": {fileID: 21300000, guid: 006348542233a744ab9957c093b555f7, type: 3}
   "\u60B2\u4F24\u7684\u624B": {fileID: 21300000, guid: 006348542233a744ab9957c093b555f7, type: 3}
+--- !u!114 &5963141870615981699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3776556562464821494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1324765471
+      Data2: 1317697346
+      Data3: -288013397
+      Data4: 1792783336
+    Path: event:/FlipperHit
+  Event: 
+  EventPlayTrigger: 9
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7625958046671611747
 GameObject:
   m_ObjectHideFlags: 0

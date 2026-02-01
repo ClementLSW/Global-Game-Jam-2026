@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using FMOD.Studio;
 
 public enum MaskType
 {
@@ -259,16 +260,19 @@ public class MaskController : MonoBehaviour
 
             if (type == MaskType.Happy)
             {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Emotion", 0);
                 activeColor = happyColor;
             }
 
             else if (type == MaskType.Sad)
             {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Emotion", 1);
                 activeColor = sadColor;
             }
 
             else if (type == MaskType.Angry)
             {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Emotion", 2);
                 activeColor = angryColor;
             }
         }
