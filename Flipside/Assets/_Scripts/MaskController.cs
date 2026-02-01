@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using FMOD.Studio;
 
 public enum MaskType
 {
@@ -69,7 +70,7 @@ public class MaskController : MonoBehaviour
 
     [Header("Mask Damaging")]
     public Image ringFill;
-    public int maskHitsTotal = 20;
+    public int maskHitsTotal = 10;
     public int maskHitsLeft;
     public GameObject damageTextCanvas;
     private bool isImmune = false;
@@ -105,8 +106,9 @@ public class MaskController : MonoBehaviour
 
         happyDead = sadDead = angryDead = false;
 
-        currentMask = (MaskType)Random.Range(0, 3);
-
+        //currentMask = (MaskType)Random.Range(0, 3);
+        currentMask = MaskType.Happy;
+        
         //PositionMasks();
 
         ResetHitsLeft();
@@ -214,7 +216,6 @@ public class MaskController : MonoBehaviour
     public void SwapMasks()
     {
         Camera.main.GetComponent<CameraController>().Shake(0.3f, 1f);
-        FindAnyObjectByType<TransitionController>().TriggerNextLevel();
 
         if (AllMasksDead)
         {
@@ -225,6 +226,7 @@ public class MaskController : MonoBehaviour
 
         MaskType nextMask = GetHighestHealthAliveMask();
 
+        FindAnyObjectByType<TransitionController>().TriggerNextLevel(currentMask, nextMask);
         if (nextMask == currentMask)
             return;
 
@@ -259,16 +261,19 @@ public class MaskController : MonoBehaviour
 
             if (type == MaskType.Happy)
             {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Emotion", 0);
                 activeColor = happyColor;
             }
 
             else if (type == MaskType.Sad)
             {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Emotion", 1);
                 activeColor = sadColor;
             }
 
             else if (type == MaskType.Angry)
             {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Emotion", 2);
                 activeColor = angryColor;
             }
         }

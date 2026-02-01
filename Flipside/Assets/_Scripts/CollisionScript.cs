@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 //using UnityEditor.Rendering;
 using UnityEngine.VFX;
+using FMODUnity;
 
 public class CollisionScript : MonoBehaviour
 {
