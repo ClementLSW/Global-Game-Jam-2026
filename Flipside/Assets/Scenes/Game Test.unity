@@ -4294,7 +4294,7 @@ PrefabInstance:
       objectReference: {fileID: 283124915}
     - target: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
       propertyPath: maskHitsTotal
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
       propertyPath: damageTextCanvas
@@ -22730,8 +22730,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1496737751}
     - target: {fileID: 3043444128340963877, guid: dc1e59bf8373dbb4e8791634ac633ed4, type: 3}
+      propertyPath: globalLight
+      value: 
+      objectReference: {fileID: 133139038}
+    - target: {fileID: 3043444128340963877, guid: dc1e59bf8373dbb4e8791634ac633ed4, type: 3}
+      propertyPath: freeformLight
+      value: 
+      objectReference: {fileID: 1128524911}
+    - target: {fileID: 3043444128340963877, guid: dc1e59bf8373dbb4e8791634ac633ed4, type: 3}
       propertyPath: anticipationTime
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043444128340963877, guid: dc1e59bf8373dbb4e8791634ac633ed4, type: 3}
+      propertyPath: spotlightFlickerDuration
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6857226322277794596, guid: dc1e59bf8373dbb4e8791634ac633ed4, type: 3}
       propertyPath: m_LocalPosition.x
