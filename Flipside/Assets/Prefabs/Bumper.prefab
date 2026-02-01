@@ -183,8 +183,8 @@ MonoBehaviour:
   isCritBumper: 0
   damageTextCanvas: {fileID: 3940710726964028676, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}
   hitStop: {fileID: 0}
-  ringVfxGO: {fileID: 0}
-  hitVfxGO: {fileID: 0}
+  ringVfxGO: {fileID: 919132149155446097, guid: 90430e0710a7d584580013c9fcf43ee6, type: 3}
+  hitVfxGO: {fileID: 919132149155446097, guid: 385642ac625f60b46b19e048f3e12ac8, type: 3}
   BumperSprite: {fileID: 1572674050562565084}
   LightSprite: {fileID: 1089180966811746451}
   bumperAnim: {fileID: 5539744707500696421}

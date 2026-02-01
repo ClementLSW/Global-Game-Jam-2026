@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../Flipside_FMod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639055378966443972
+  lastModified: 639055578150976191
   FileSizes:
   - Name: Desktop
-    Value: 900
+    Value: 1170
   Exists: 1
 --- !u!114 &-8559438943617594384
 MonoBehaviour:
@@ -38,6 +38,61 @@ MonoBehaviour:
     Data2: 1222093148
     Data3: -1235785596
     Data4: 841745313
+  Banks:
+  - {fileID: -190796571073988740}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4554224351520581767}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7719293788326700675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BoosterHit
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/BoosterHit
+  Guid:
+    Data1: -1333227072
+    Data2: 1077269008
+    Data3: 1690156168
+    Data4: 528298235
+  Banks:
+  - {fileID: -190796571073988740}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3082568832171137209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FlipperHit
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/FlipperHit
+  Guid:
+    Data1: -1324765471
+    Data2: 1317697346
+    Data3: -288013397
+    Data4: 1792783336
   Banks:
   - {fileID: -190796571073988740}
   IsStream: 0
@@ -90,10 +145,10 @@ MonoBehaviour:
   Path: ../Flipside_FMod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639055378966443972
+  lastModified: 639055578150966412
   FileSizes:
   - Name: Desktop
-    Value: 993664
+    Value: 1225120
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -113,13 +168,18 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -2222050746457194615}
   - {fileID: -8559438943617594384}
+  - {fileID: 6913869592212397127}
+  - {fileID: -7719293788326700675}
+  - {fileID: 2482186778801686199}
+  - {fileID: 5650364953258493864}
+  - {fileID: -3082568832171137209}
   EditorParameters: []
   MasterBanks:
   - {fileID: -190796571073988740}
   StringsBanks:
   - {fileID: -8991280411850575813}
   cacheVersion: 131858
-  cacheTime: 639055378966443972
+  cacheTime: 639055578150976191
   SerializableEventsDict:
   - key: event:/BGM
     index: 0
@@ -135,9 +195,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/BGM/Parameter 1
+  m_Name: parameter:/BGM/Emotion
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Parameter 1
+  Name: Emotion
   StudioPath: 
   Min: 0
   Max: 2
@@ -152,3 +212,138 @@ MonoBehaviour:
   - sad
   - angry
   Exists: 1
+--- !u!114 &2482186778801686199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FlipperFlip
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/FlipperFlip
+  Guid:
+    Data1: -221984044
+    Data2: 1291887949
+    Data3: -710807673
+    Data4: -67417157
+  Banks:
+  - {fileID: -190796571073988740}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3436824094891337841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BossHit/Emotion
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Emotion
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3985641658
+    data2: 2138853028
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - happy
+  - sad
+  - angry
+  Exists: 1
+--- !u!114 &4554224351520581767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BumperHit/Critical
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Critical
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2203121330
+    data2: 4037573071
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - notCrit
+  - Crit
+  Exists: 1
+--- !u!114 &5650364953258493864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Menu
+  Guid:
+    Data1: -1619323435
+    Data2: 1272461656
+    Data3: -1520849004
+    Data4: -1185251315
+  Banks:
+  - {fileID: -190796571073988740}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 24000
+--- !u!114 &6913869592212397127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BossHit
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/BossHit
+  Guid:
+    Data1: 122174346
+    Data2: 1238873012
+    Data3: 931720866
+    Data4: -1764272924
+  Banks:
+  - {fileID: -190796571073988740}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3436824094891337841}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

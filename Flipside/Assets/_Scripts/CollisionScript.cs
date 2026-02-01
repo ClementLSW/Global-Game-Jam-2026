@@ -36,10 +36,14 @@ public class CollisionScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             #region VFX
+
+            if (ringVfxGO != null && hitVfxGO!= null)
+            {
             Instantiate(ringVfxGO, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
             GameObject hitVfx = Instantiate(hitVfxGO, collision.gameObject.transform.position, Quaternion.identity);
             VisualEffect hitVfxGraph = hitVfx.GetComponent<VisualEffect>();
             hitVfxGraph.SetVector4("Color 2", maskController.activeColor);
+            }
             #endregion
 
             GameObject hit = collision.gameObject;
