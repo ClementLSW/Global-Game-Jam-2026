@@ -69,7 +69,7 @@ public class MaskController : MonoBehaviour
 
     [Header("Mask Damaging")]
     public Image ringFill;
-    public int maskHitsTotal = 20;
+    public int maskHitsTotal = 10;
     public int maskHitsLeft;
     public GameObject damageTextCanvas;
     private bool isImmune = false;
