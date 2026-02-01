@@ -3088,11 +3088,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2436649801687657446, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
       propertyPath: m_Radius
-      value: 0.7873297
+      value: 1.0458302
       objectReference: {fileID: 0}
     - target: {fileID: 2436649801687657446, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
       propertyPath: m_Offset.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436649801687657446, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.25850058
       objectReference: {fileID: 0}
     - target: {fileID: 2923242533026894789, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
       propertyPath: m_Name
@@ -3194,6 +3198,10 @@ PrefabInstance:
       propertyPath: ringFill
       value: 
       objectReference: {fileID: 283124915}
+    - target: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
+      propertyPath: maskHitsTotal
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6605432374314232500, guid: 07a1a80a69f736445a2bcdeda0d32e1e, type: 3}
       propertyPath: damageTextCanvas
       value: 

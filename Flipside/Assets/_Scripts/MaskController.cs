@@ -106,8 +106,9 @@ public class MaskController : MonoBehaviour
 
         happyDead = sadDead = angryDead = false;
 
-        currentMask = (MaskType)Random.Range(0, 3);
-
+        //currentMask = (MaskType)Random.Range(0, 3);
+        currentMask = MaskType.Happy;
+        
         //PositionMasks();
 
         ResetHitsLeft();
