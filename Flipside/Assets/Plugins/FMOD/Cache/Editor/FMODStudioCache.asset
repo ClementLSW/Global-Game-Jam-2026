@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../Flipside_FMod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639055337058035249
+  lastModified: 639055424812945737
   FileSizes:
   - Name: Desktop
     Value: 900
@@ -90,7 +90,7 @@ MonoBehaviour:
   Path: ../Flipside_FMod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639055337058029955
+  lastModified: 639055424812945737
   FileSizes:
   - Name: Desktop
     Value: 993664
@@ -119,7 +119,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -8991280411850575813}
   cacheVersion: 131858
-  cacheTime: 639055337058035249
+  cacheTime: 639055424812945737
   SerializableEventsDict:
   - key: event:/BGM
     index: 0
