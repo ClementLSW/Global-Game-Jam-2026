@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{9574ef6a-e78c-4ce4-a4a4-7230d1162a5a}">
+		<property name="assetPath">
+			<value>powerUp8 - Crop #2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.25138321995464852</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{26d4306c-3e2c-4e20-8422-7993239ab2a4}</destination>
+		</relationship>
+	</object>
+</objects>

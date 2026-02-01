@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: dcbb6083ed867074aa52f3250def3642
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6251636004400959610
+    second: Boss_Hole_RimLights_On_0
+  - first:
+      213: 4705011211119853154
+    second: Boss_Hole_RimLights_On_1
+  - first:
+      213: -5222284612573219083
+    second: Boss_Hole_RimLights_On_2
+  - first:
+      213: 6783483325601954664
+    second: Boss_Hole_RimLights_On_3
+  - first:
+      213: -46937501592530830
+    second: Boss_Hole_RimLights_On_4
+  - first:
+      213: -3329451076763519195
+    second: Boss_Hole_RimLights_On_5
+  - first:
+      213: 488015367598262818
+    second: Boss_Hole_RimLights_On_6
+  - first:
+      213: 4360863721682912520
+    second: Boss_Hole_RimLights_On_7
+  - first:
+      213: 8823150427754495611
+    second: Boss_Hole_RimLights_On_8
+  - first:
+      213: -615375430917809435
+    second: Boss_Hole_RimLights_On_9
+  - first:
+      213: -2891285747748475041
+    second: Boss_Hole_RimLights_On_10
+  - first:
+      213: 827570797589004593
+    second: Boss_Hole_RimLights_On_11
+  - first:
+      213: -3203033806289216434
+    second: Boss_Hole_RimLights_On_12
+  - first:
+      213: -8390063313812945921
+    second: Boss_Hole_RimLights_On_13
+  - first:
+      213: -5722608122572798871
+    second: Boss_Hole_RimLights_On_14
+  - first:
+      213: 6631097461671948569
+    second: Boss_Hole_RimLights_On_15
+  - first:
+      213: 4678406246448292900
+    second: Boss_Hole_RimLights_On_16
+  - first:
+      213: 7338309063344876355
+    second: Boss_Hole_RimLights_On_17
+  - first:
+      213: -1680034222654277087
+    second: Boss_Hole_RimLights_On_18
+  - first:
+      213: -5929208006036932942
+    second: Boss_Hole_RimLights_On_19
+  - first:
+      213: 2362306133013284059
+    second: Boss_Hole_RimLights_On_20
+  - first:
+      213: 3474692670110298794
+    second: Boss_Hole_RimLights_On_21
+  - first:
+      213: -1051543340378971253
+    second: Boss_Hole_RimLights_On_22
+  - first:
+      213: -4445119838470817056
+    second: Boss_Hole_RimLights_On_23
+  - first:
+      213: 7111731210162319698
+    second: Boss_Hole_RimLights_On_24
+  - first:
+      213: 4423751986388558801
+    second: Boss_Hole_RimLights_On_25
+  - first:
+      213: -6004260978749752313
+    second: Boss_Hole_RimLights_On_26
+  - first:
+      213: 2180619130386703045
+    second: Boss_Hole_RimLights_On_27
+  - first:
+      213: 1432662853644192228
+    second: Boss_Hole_RimLights_On_28
+  - first:
+      213: -104319933891107936
+    second: Boss_Hole_RimLights_On_29
+  - first:
+      213: 6678890423394217388
+    second: Boss_Hole_RimLights_On_30
+  - first:
+      213: -1667522244255579837
+    second: Boss_Hole_RimLights_On_31
+  - first:
+      213: -9141778110789166180
+    second: Boss_Hole_RimLights_On_32
+  - first:
+      213: 3180936336409117971
+    second: Boss_Hole_RimLights_On_33
+  - first:
+      213: 5841110186653586283
+    second: Boss_Hole_RimLights_On_34
+  - first:
+      213: -3852823338576446702
+    second: Boss_Hole_RimLights_On_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 326
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a709c5bc2d542c650800000000000000
+      internalID: 6251636004400959610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_1
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 333
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26e770fa4ce8b4140800000000000000
+      internalID: 4705011211119853154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_2
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 336
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6b59f40d7b687b0800000000000000
+      internalID: -5222284612573219083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_3
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 333
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b3a4ae426c32e50800000000000000
+      internalID: 6783483325601954664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_4
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 326
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 270deea479e395ff0800000000000000
+      internalID: -46937501592530830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_5
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 297
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 527f778c2e96bc1d0800000000000000
+      internalID: -3329451076763519195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 314
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a40a62467c5c600800000000000000
+      internalID: 488015367598262818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_7
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 314
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8054cc43376e48c30800000000000000
+      internalID: 4360863721682912520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_8
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 297
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e74262190227a70800000000000000
+      internalID: 8823150427754495611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_9
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 278
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea14a45e4fb577f0800000000000000
+      internalID: -615375430917809435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_10
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 278
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f6d4d5ee610e7d0800000000000000
+      internalID: -2891285747748475041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_11
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13187c8714f1c7b00800000000000000
+      internalID: 827570797589004593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_12
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c509c39b98c83d0800000000000000
+      internalID: -3203033806289216434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_13
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 232
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff384295ed1809b80800000000000000
+      internalID: -8390063313812945921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_14
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 232
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96488417b363590b0800000000000000
+      internalID: -5722608122572798871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_15
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 207
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91173f12204660c50800000000000000
+      internalID: 6631097461671948569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_16
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 207
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 424e482a1b90de040800000000000000
+      internalID: 4678406246448292900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_17
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 179
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b63bc8639e6d560800000000000000
+      internalID: 7338309063344876355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_18
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 179
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12a313496c15fa8e0800000000000000
+      internalID: -1680034222654277087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_19
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 150
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b634c89bb837bda0800000000000000
+      internalID: -5929208006036932942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_20
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 150
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4cbf479e898c020800000000000000
+      internalID: 2362306133013284059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_21
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 125
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2f391e296983030800000000000000
+      internalID: 3474692670110298794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_22
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 125
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b83a8ca37ea2861f0800000000000000
+      internalID: -1051543340378971253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_23
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 102
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eab7e3ee03cf42c0800000000000000
+      internalID: -4445119838470817056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_24
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 102
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 251b8c72bd1f1b260800000000000000
+      internalID: 7111731210162319698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_25
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 79
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d36e1b5ef2546d30800000000000000
+      internalID: 4423751986388558801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_26
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 79
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70cb1e6a3749caca0800000000000000
+      internalID: -6004260978749752313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_27
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 60
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2ee11bb8d134e10800000000000000
+      internalID: 2180619130386703045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 43
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e90c5a5647d1e310800000000000000
+      internalID: 1432662853644192228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_29
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 43
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3ad65a2916d8ef0800000000000000
+      internalID: -104319933891107936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_30
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 60
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cadab2c247f20bc50800000000000000
+      internalID: 6678890423394217388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_31
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 31
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34185109a55cbd8e0800000000000000
+      internalID: -1667522244255579837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_32
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 24
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b58f25e31e12180800000000000000
+      internalID: -9141778110789166180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_33
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 21
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3154cc0aeb4f42c20800000000000000
+      internalID: 3180936336409117971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_34
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 24
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b63176964cacf0150800000000000000
+      internalID: 5841110186653586283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Hole_RimLights_On_35
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 31
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21bf0d13695088ac0800000000000000
+      internalID: -3852823338576446702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Boss_Hole_RimLights_On_0: 6251636004400959610
+      Boss_Hole_RimLights_On_1: 4705011211119853154
+      Boss_Hole_RimLights_On_10: -2891285747748475041
+      Boss_Hole_RimLights_On_11: 827570797589004593
+      Boss_Hole_RimLights_On_12: -3203033806289216434
+      Boss_Hole_RimLights_On_13: -8390063313812945921
+      Boss_Hole_RimLights_On_14: -5722608122572798871
+      Boss_Hole_RimLights_On_15: 6631097461671948569
+      Boss_Hole_RimLights_On_16: 4678406246448292900
+      Boss_Hole_RimLights_On_17: 7338309063344876355
+      Boss_Hole_RimLights_On_18: -1680034222654277087
+      Boss_Hole_RimLights_On_19: -5929208006036932942
+      Boss_Hole_RimLights_On_2: -5222284612573219083
+      Boss_Hole_RimLights_On_20: 2362306133013284059
+      Boss_Hole_RimLights_On_21: 3474692670110298794
+      Boss_Hole_RimLights_On_22: -1051543340378971253
+      Boss_Hole_RimLights_On_23: -4445119838470817056
+      Boss_Hole_RimLights_On_24: 7111731210162319698
+      Boss_Hole_RimLights_On_25: 4423751986388558801
+      Boss_Hole_RimLights_On_26: -6004260978749752313
+      Boss_Hole_RimLights_On_27: 2180619130386703045
+      Boss_Hole_RimLights_On_28: 1432662853644192228
+      Boss_Hole_RimLights_On_29: -104319933891107936
+      Boss_Hole_RimLights_On_3: 6783483325601954664
+      Boss_Hole_RimLights_On_30: 6678890423394217388
+      Boss_Hole_RimLights_On_31: -1667522244255579837
+      Boss_Hole_RimLights_On_32: -9141778110789166180
+      Boss_Hole_RimLights_On_33: 3180936336409117971
+      Boss_Hole_RimLights_On_34: 5841110186653586283
+      Boss_Hole_RimLights_On_35: -3852823338576446702
+      Boss_Hole_RimLights_On_4: -46937501592530830
+      Boss_Hole_RimLights_On_5: -3329451076763519195
+      Boss_Hole_RimLights_On_6: 488015367598262818
+      Boss_Hole_RimLights_On_7: 4360863721682912520
+      Boss_Hole_RimLights_On_8: 8823150427754495611
+      Boss_Hole_RimLights_On_9: -615375430917809435
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

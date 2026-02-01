@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{af28e882-954f-46e7-bb4a-bdedb32a2d46}">
+		<property name="name">
+			<value>Critical</value>
+		</property>
+		<relationship name="folder">
+			<destination>{4bf30daa-7e2e-4695-a557-95fe6f5c825b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{2da79a46-5529-41aa-9453-e7812d45f8ec}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{2da79a46-5529-41aa-9453-e7812d45f8ec}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>notCrit</value>
+			<value>Crit</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
