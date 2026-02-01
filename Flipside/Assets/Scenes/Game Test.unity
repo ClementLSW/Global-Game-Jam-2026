@@ -4126,7 +4126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ballPrefab: {fileID: 4188414599123553397, guid: a1a5f21104cf2304cb81fe4f6712b24c, type: 3}
-  spawnPoint: {fileID: 910306648}
+  spawnPoint: {fileID: 2129130749}
   respawn: 0.5
   onBallSpawned:
     m_PersistentCalls:
