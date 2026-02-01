@@ -96,7 +96,7 @@ public class SceneController : MonoBehaviour
     // SceneController.Instance.LoadSceneByName("Level2");
     public void LoadGameScene()
     {
-        LoadSceneByName("Game");
+        LoadSceneByName("Game Test");
         pauseMenuUI = GameObject.Find("Pause").GetComponent<RectTransform>();
     }
     public void LoadMenuScene()

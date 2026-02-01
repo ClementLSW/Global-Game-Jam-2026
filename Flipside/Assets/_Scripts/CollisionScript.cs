@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using UnityEditor.Rendering;
+//using UnityEditor.Rendering;
 using UnityEngine.VFX;
 
 public class CollisionScript : MonoBehaviour
