@@ -17,7 +17,8 @@ public class TransitionController : MonoBehaviour
     [Header("References")]
     //TODO: Potentially to change to reference KL's script to call the SwapMask() function to handle the animation in his script
     [SerializeField] private Animator maskAnimator;
-    [SerializeField] private Light2D spotlight1, spotlight2;
+
+    [SerializeField] private Light2D spotlight1, spotlight2, globalLight, freeformLight;
     [SerializeField] private GameObject happyMap, sadMap, angryMap;
 
     private TransitionPhase transitionPhase;
@@ -55,6 +56,8 @@ public class TransitionController : MonoBehaviour
         //TODO: Turn off spotlights
         spotlight1.enabled = false;
         spotlight2.enabled = false;
+        globalLight.intensity = 0.1f;
+        freeformLight.intensity = 0.2f;
         //TODO: Change spotlight colors
         //TODO: Swap map, disable incoming map mechanics, obstructions 50% opacity
         switch (previousMaskType)
@@ -103,6 +106,8 @@ public class TransitionController : MonoBehaviour
         //TODO: Turn on spotlights
         spotlight1.enabled = true;
         spotlight2.enabled = true;
+        globalLight.intensity = 1f;
+        freeformLight.intensity = 2f;
         //TODO: Change BGM
         //TODO: Play MaskChange animation (possibly use a linked list style Animator tree with a trigger to move next sequentially)
         //maskAnimator.SetTrigger(MaskChange);
