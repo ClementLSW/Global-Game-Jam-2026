@@ -13,6 +13,9 @@ public class AutoRelaunch : MonoBehaviour
 
     public Transform lockpos;
 
+    [Header("VFX")]
+    [SerializeField] private GameObject smokeVfx;
+
     private void Awake()
     {
         BallManager.Instance.onBallDrained.AddListener(OnBallDrained);
@@ -35,16 +38,18 @@ public class AutoRelaunch : MonoBehaviour
             {
                 collision.gameObject.transform.position = lockpos.position;
                 collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-                StartCoroutine(FireBall(collision.attachedRigidbody));
+                StartCoroutine(FireBall(collision.attachedRigidbody, collision.transform.position));
                 currentState = state.Fired;
             }
         }
     }
 
-    private IEnumerator FireBall(Rigidbody2D rb)
+    private IEnumerator FireBall(Rigidbody2D rb, Vector3 pos)
     {
         yield return new WaitForSeconds(0.5f);
         rb.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
         GetComponent<Collider2D>().isTrigger = false;
+
+        Instantiate(smokeVfx, pos, Quaternion.identity);
     }
 }

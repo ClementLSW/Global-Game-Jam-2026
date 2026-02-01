@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7555637936282940861}
   - component: {fileID: 5072152592130144435}
   - component: {fileID: 914456998375534653}
+  - component: {fileID: 6581210658422620664}
   m_Layer: 0
   m_Name: SingleDistortionRing_VFXGraph
   m_TagString: Untagged
@@ -118,3 +119,16 @@ VFXRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
+--- !u!114 &6581210658422620664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6304834676974438631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab1d751266841d4d90713b1cb0806ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelfDestruct
+  duration: 3

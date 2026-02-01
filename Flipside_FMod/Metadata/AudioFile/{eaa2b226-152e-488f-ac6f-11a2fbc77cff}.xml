@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{eaa2b226-152e-488f-ac6f-11a2fbc77cff}">
+		<property name="assetPath">
+			<value>Snare_Real03.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.64408163265306118</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{26d4306c-3e2c-4e20-8422-7993239ab2a4}</destination>
+		</relationship>
+	</object>
+</objects>

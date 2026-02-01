@@ -54,6 +54,16 @@ public class MaskController : MonoBehaviour
 
     [SerializeField] private Animator maskAnimator;
 
+    [Header("VFX")]
+    [ColorUsage(true, true)]
+    [SerializeField] public Color happyColor;
+    [ColorUsage(true, true)]
+    [SerializeField] public Color sadColor;
+    [ColorUsage(true, true)]
+    [SerializeField] public Color angryColor;
+    [ColorUsage(true, true)]
+    [SerializeField] public Color activeColor;
+
     public MaskType CurrentMask => currentMask;
     public bool AllMasksDead => happyDead && sadDead && angryDead;
 
@@ -245,6 +255,21 @@ public class MaskController : MonoBehaviour
             {
                 bestHealth = health;
                 best = type;
+            }
+
+            if (type == MaskType.Happy)
+            {
+                activeColor = happyColor;
+            }
+
+            else if (type == MaskType.Sad)
+            {
+                activeColor = sadColor;
+            }
+
+            else if (type == MaskType.Angry)
+            {
+                activeColor = angryColor;
             }
         }
     }

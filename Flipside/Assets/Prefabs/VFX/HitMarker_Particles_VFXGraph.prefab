@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5269963632007425843}
   - component: {fileID: 8575399763636730621}
   - component: {fileID: 5915413789493003974}
+  - component: {fileID: 6735566708625001454}
   m_Layer: 0
   m_Name: HitMarker_Particles_VFXGraph
   m_TagString: Untagged
@@ -118,3 +119,16 @@ VFXRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
+--- !u!114 &6735566708625001454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615158407577060622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab1d751266841d4d90713b1cb0806ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelfDestruct
+  duration: 3

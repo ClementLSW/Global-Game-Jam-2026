@@ -155,5 +155,11 @@ MonoBehaviour:
   maskController: {fileID: 0}
   damageAmount: 1
   isCritBumper: 0
-  isSwapBumper: 0
   damageTextCanvas: {fileID: 0}
+  bumperSound:
+    Guid:
+      Data1: 1559336183
+      Data2: 1222093148
+      Data3: -1235785596
+      Data4: 841745313
+    Path: event:/BumperHit

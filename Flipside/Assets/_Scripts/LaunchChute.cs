@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.PlayerSettings;
 
 public class LaunchChute : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class LaunchChute : MonoBehaviour
 
     private Vector2 restPosition;
     private bool isPulling;
+
+    [Header("VFX")]
+    [SerializeField] private GameObject smokeVfx;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,6 +54,8 @@ public class LaunchChute : MonoBehaviour
         float pullDistance = Vector2.Distance(plunger.position, restPosition);
         float forceToApply = (pullDistance / maxPullDistance) * releaseForce;
         plunger.AddForce(Vector2.up * forceToApply, ForceMode2D.Impulse);
+
+        Instantiate(smokeVfx, transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame
