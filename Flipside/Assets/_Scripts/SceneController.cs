@@ -12,6 +12,8 @@ public class SceneController : MonoBehaviour
 
     private bool isPaused = false;
 
+    public RectTransform pauseMenuUI;
+
     void Awake()
     {
         if (Instance == null)
@@ -95,6 +97,7 @@ public class SceneController : MonoBehaviour
     public void LoadGameScene()
     {
         LoadSceneByName("Game");
+        pauseMenuUI = GameObject.Find("Pause").GetComponent<RectTransform>();
     }
     public void LoadMenuScene()
     {
@@ -116,10 +119,12 @@ public class SceneController : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 0f;
+            pauseMenuUI.gameObject.SetActive(true);
         }
         else
         {
             Time.timeScale = 1f;
+            pauseMenuUI.gameObject.SetActive(true);
         }
     }
 }
