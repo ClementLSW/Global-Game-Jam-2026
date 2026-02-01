@@ -390,6 +390,7 @@ MonoBehaviour:
   maskController: {fileID: 6605432374314232500}
   damageAmount: 3
   damageTextCanvas: {fileID: 3940710726964028676, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}
+  hitStop: {fileID: 0}
   ringVfxGO: {fileID: 6304834676974438631, guid: 49132f735b3b1464bb26f7eb4efe5523, type: 3}
   hitVfxGO: {fileID: 1922687740952642528, guid: 0b994a7ac0d5a3449a633f911f13c5d0, type: 3}
   hitRingVfxGO: {fileID: 4680429719938351708, guid: 5e8b827c5be530b489437fded5b3ddb2, type: 3}
@@ -532,7 +533,7 @@ MonoBehaviour:
   happyColor: {r: 29.321924, g: 25.01348, b: 3.0703578, a: 1}
   sadColor: {r: 0.43170327, g: 1.3734381, b: 8.474189, a: 1}
   angryColor: {r: 4.237094, g: 0.43969798, b: 0.43969798, a: 1}
-  activeColor: {r: 8.574187, g: 0, b: 7.120504, a: 0.7254902}
+  activeColor: {r: 4.237094, g: 0.43969798, b: 0.43969798, a: 1}
   ringFill: {fileID: 0}
   maskHitsTotal: 20
   maskHitsLeft: 0
@@ -682,6 +683,7 @@ MonoBehaviour:
   maskController: {fileID: 6605432374314232500}
   damageAmount: 3
   damageTextCanvas: {fileID: 3940710726964028676, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}
+  hitStop: {fileID: 0}
   ringVfxGO: {fileID: 6304834676974438631, guid: 49132f735b3b1464bb26f7eb4efe5523, type: 3}
   hitVfxGO: {fileID: 1922687740952642528, guid: 0b994a7ac0d5a3449a633f911f13c5d0, type: 3}
   hitRingVfxGO: {fileID: 4680429719938351708, guid: 5e8b827c5be530b489437fded5b3ddb2, type: 3}
@@ -1010,6 +1012,7 @@ MonoBehaviour:
   maskController: {fileID: 6605432374314232500}
   damageAmount: 3
   damageTextCanvas: {fileID: 3940710726964028676, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}
+  hitStop: {fileID: 0}
   ringVfxGO: {fileID: 6304834676974438631, guid: 49132f735b3b1464bb26f7eb4efe5523, type: 3}
   hitVfxGO: {fileID: 1922687740952642528, guid: 0b994a7ac0d5a3449a633f911f13c5d0, type: 3}
   hitRingVfxGO: {fileID: 4680429719938351708, guid: 5e8b827c5be530b489437fded5b3ddb2, type: 3}

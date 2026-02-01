@@ -156,9 +156,9 @@ public class MaskController : MonoBehaviour
                 Quaternion.identity
             );
 
-            instDamageNumber
+            /*instDamageNumber
                 .GetComponentInChildren<TextMeshProUGUI>()
-                .text = damageAmount.ToString();
+                .text = damageAmount.ToString();*/
 
             switch (currentMask)
             {

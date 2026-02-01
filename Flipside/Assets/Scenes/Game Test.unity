@@ -4146,7 +4146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2181be668198b554988b9da7f405598a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  startingBalls: 3
+  startingBalls: 20
   maskController: {fileID: 1588398256}
   onGameOver:
     m_PersistentCalls:
@@ -6480,14 +6480,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: hitVfxGO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: ringVfxGO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
       propertyPath: damageAmount
       value: 1
       objectReference: {fileID: 0}
@@ -7771,14 +7763,6 @@ PrefabInstance:
     - target: {fileID: 2924334327600338188, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: hitVfxGO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: ringVfxGO
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
       propertyPath: damageAmount
@@ -16030,14 +16014,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: hitVfxGO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: ringVfxGO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
       propertyPath: damageAmount
       value: 1
       objectReference: {fileID: 0}
@@ -17954,14 +17930,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: hitVfxGO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: ringVfxGO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
       propertyPath: damageAmount
       value: 1
       objectReference: {fileID: 0}
@@ -19078,7 +19046,7 @@ MonoBehaviour:
   pullspeed: 0.8
   maxPullDistance: 1
   releaseForce: 20
-  smokeVfx: {fileID: 919132149155446097, guid: 90430e0710a7d584580013c9fcf43ee6, type: 3}
+  smokeVfx: {fileID: 7319831153307179371, guid: 63887fdeac487fc48a52ab2fbb7ff54e, type: 3}
 --- !u!231 &1681078450
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -20114,11 +20082,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskCollision
   maskController: {fileID: 1588398256}
   damageAmount: 3
-  damageTextCanvas: {fileID: 1366611300}
+  damageTextCanvas: {fileID: 3940710726964028676, guid: 141f4bbf2ac9fea43be5875747548139, type: 3}
   hitStop: {fileID: 1156375870}
-  ringVfxGO: {fileID: 0}
-  hitVfxGO: {fileID: 0}
-  hitRingVfxGO: {fileID: 0}
+  ringVfxGO: {fileID: 6304834676974438631, guid: 49132f735b3b1464bb26f7eb4efe5523, type: 3}
+  hitVfxGO: {fileID: 1922687740952642528, guid: 0b994a7ac0d5a3449a633f911f13c5d0, type: 3}
+  hitRingVfxGO: {fileID: 4680429719938351708, guid: 5e8b827c5be530b489437fded5b3ddb2, type: 3}
 --- !u!58 &1752441275
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20759,14 +20727,6 @@ PrefabInstance:
     - target: {fileID: 2924334327600338188, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: hitVfxGO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: ringVfxGO
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
       propertyPath: damageAmount
@@ -21921,14 +21881,6 @@ PrefabInstance:
     - target: {fileID: 2924334327600338188, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: hitVfxGO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
-      propertyPath: ringVfxGO
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4400669138738716202, guid: 88148230ad1f25e4b8cf9c99b92266dc, type: 3}
       propertyPath: damageAmount

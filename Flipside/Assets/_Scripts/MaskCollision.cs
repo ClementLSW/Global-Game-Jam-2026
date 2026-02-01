@@ -13,7 +13,7 @@ public class MaskCollision : MonoBehaviour
     [Header("VFX")]
     [SerializeField] private GameObject ringVfxGO;
     [SerializeField] private GameObject hitVfxGO;
-    [SerializeField] private GameObject hitRingVfxGO;
+    //[SerializeField] private GameObject hitRingVfxGO;
 
     public void Start()
     {
@@ -32,9 +32,9 @@ public class MaskCollision : MonoBehaviour
             hitVfxGraph.SetVector4("Color 2", maskController.activeColor);
 
             Vector3 dir = collision.transform.position - gameObject.transform.position;
-            GameObject hitRingVfx = Instantiate(hitRingVfxGO, gameObject.transform.position, Quaternion.Euler(dir.x, -90, -90));
-            VisualEffect hitRingVfxGraph = hitRingVfx.GetComponent<VisualEffect>();
-            hitRingVfxGraph.SetVector4("Color", maskController.activeColor);
+            //GameObject hitRingVfx = Instantiate(hitRingVfxGO, gameObject.transform.position, Quaternion.Euler(dir.x, -90, -90));
+            //VisualEffect hitRingVfxGraph = hitRingVfx.GetComponent<VisualEffect>();
+            //hitRingVfxGraph.SetVector4("Color", maskController.activeColor);
             #endregion
 
             GameObject hit = collision.gameObject;
