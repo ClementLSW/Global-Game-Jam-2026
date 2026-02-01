@@ -125,3 +125,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   currentState: 0
   lockpos: {fileID: 2577780732043946487}
+  smokeVfx: {fileID: 7319831153307179371, guid: 63887fdeac487fc48a52ab2fbb7ff54e, type: 3}

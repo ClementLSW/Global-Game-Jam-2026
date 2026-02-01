@@ -188,17 +188,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2907084657654075164, guid: a1a5f21104cf2304cb81fe4f6712b24c, type: 3}
+      propertyPath: m_Time
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907084657654075164, guid: a1a5f21104cf2304cb81fe4f6712b24c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fae3d7768d593e469c47878748a6728, type: 2}
+    - target: {fileID: 2907084657654075164, guid: a1a5f21104cf2304cb81fe4f6712b24c, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907084657654075164, guid: a1a5f21104cf2304cb81fe4f6712b24c, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907084657654075164, guid: a1a5f21104cf2304cb81fe4f6712b24c, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907084657654075164, guid: a1a5f21104cf2304cb81fe4f6712b24c, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4188414599123553397, guid: a1a5f21104cf2304cb81fe4f6712b24c, type: 3}
       propertyPath: m_Name
       value: Pinball
       objectReference: {fileID: 0}
     - target: {fileID: 5681847594178898235, guid: a1a5f21104cf2304cb81fe4f6712b24c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00866
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 5681847594178898235, guid: a1a5f21104cf2304cb81fe4f6712b24c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.69
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 5681847594178898235, guid: a1a5f21104cf2304cb81fe4f6712b24c, type: 3}
       propertyPath: m_LocalPosition.z
