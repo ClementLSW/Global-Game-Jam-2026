@@ -23,6 +23,7 @@ public class AutoRelaunch : MonoBehaviour
         if(currentState == state.Fired)
         {
             currentState = state.Idle;
+            GetComponent<Collider2D>().isTrigger = true;
         }
     }
 
@@ -44,5 +45,6 @@ public class AutoRelaunch : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         rb.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
+        GetComponent<Collider2D>().isTrigger = false;
     }
 }
