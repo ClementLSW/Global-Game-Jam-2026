@@ -216,7 +216,6 @@ public class MaskController : MonoBehaviour
     public void SwapMasks()
     {
         Camera.main.GetComponent<CameraController>().Shake(0.3f, 1f);
-        FindAnyObjectByType<TransitionController>().TriggerNextLevel();
 
         if (AllMasksDead)
         {
@@ -227,6 +226,7 @@ public class MaskController : MonoBehaviour
 
         MaskType nextMask = GetHighestHealthAliveMask();
 
+        FindAnyObjectByType<TransitionController>().TriggerNextLevel(currentMask, nextMask);
         if (nextMask == currentMask)
             return;
 

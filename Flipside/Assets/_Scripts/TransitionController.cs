@@ -18,9 +18,11 @@ public class TransitionController : MonoBehaviour
     //TODO: Potentially to change to reference KL's script to call the SwapMask() function to handle the animation in his script
     [SerializeField] private Animator maskAnimator;
     [SerializeField] private Light2D spotlight1, spotlight2;
-    [SerializeField] private GameObject map1, map2, map3;
+    [SerializeField] private GameObject happyMap, sadMap, angryMap;
 
     private TransitionPhase transitionPhase;
+
+    private MaskType previousMaskType, nextMaskType;
     enum TransitionPhase
     {
         BOSS_ACTIVE,
@@ -28,14 +30,11 @@ public class TransitionController : MonoBehaviour
         VISUAL_SWAP,
         MECHANIC_SWAP,
     }
-
-    private void Update()
+    
+    public void TriggerNextLevel(MaskType previousMask, MaskType nextMask)
     {
-        if (Input.GetKeyDown(KeyCode.Q)) TriggerNextLevel();
-    }
-
-    public void TriggerNextLevel()
-    {
+        previousMaskType = previousMask;
+        nextMaskType = nextMask;
         StartCoroutine(StartAnticipation());
     }
 
@@ -58,6 +57,48 @@ public class TransitionController : MonoBehaviour
         spotlight2.enabled = false;
         //TODO: Change spotlight colors
         //TODO: Swap map, disable incoming map mechanics, obstructions 50% opacity
+        switch (previousMaskType)
+        {
+            case MaskType.Happy:
+                switch (nextMaskType)
+                {
+                    case MaskType.Sad:
+                        happyMap.SetActive(false);
+                        sadMap.SetActive(true);
+                        break;
+                    case MaskType.Angry:
+                        happyMap.SetActive(false);
+                        angryMap.SetActive(true);
+                        break;
+                }
+                break;
+            case MaskType.Sad:
+                switch (nextMaskType)
+                {
+                    case MaskType.Happy:
+                        sadMap.SetActive(false);
+                        happyMap.SetActive(true);
+                        break;
+                    case MaskType.Angry:
+                        sadMap.SetActive(false);
+                        angryMap.SetActive(true);
+                        break;
+                }
+                break;
+            case MaskType.Angry:
+                switch (nextMaskType)
+                {
+                    case MaskType.Happy:
+                        angryMap.SetActive(false);
+                        happyMap.SetActive(true);
+                        break;
+                    case MaskType.Sad:
+                        angryMap.SetActive(false);
+                        sadMap.SetActive(true);
+                        break;
+                }
+                break;
+        }
         yield return new WaitForSeconds(spotlightFlickerDuration);
         //TODO: Turn on spotlights
         spotlight1.enabled = true;
