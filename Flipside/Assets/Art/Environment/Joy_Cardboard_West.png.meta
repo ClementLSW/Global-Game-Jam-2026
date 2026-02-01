@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ee99ce41d1d66094ca73f990d9d41e33
+guid: 596e5845689328347b1c70d7c956c4b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3344455802222743072
-    second: AngerMask_Dead_02_0
+      213: 6613931512963608764
+    second: Joy_Cardboard_West_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AngerMask_Dead_02_0
+      name: Joy_Cardboard_West_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 26
-        width: 243
-        height: 286
+        x: 3
+        y: 12
+        width: 15
+        height: 182
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 02e0b7a15d4e96e20800000000000000
-      internalID: 3344455802222743072
+      spriteID: cb035fe3ba769cb50800000000000000
+      internalID: 6613931512963608764
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AngerMask_Dead_02_0: 3344455802222743072
+      Joy_Cardboard_West_0: 6613931512963608764
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
